@@ -20,14 +20,14 @@
       <img src="assets/logos/alraedah-parent.png" alt="Alraedah Invest" height="56">
     </a>
     <nav class="site-nav" aria-label="Primary">
-      <a href="#opportunities">Opportunities</a>
       <a href="#how">How it works</a>
-      <a href="#returns">Understand returns</a>
+      <a href="#returns">Returns</a>
+      <a href="#opportunities">Opportunities</a>
       <a href="#faq">FAQ</a>
       <a href="#institutions" class="nav-institutions">For institutions</a>
     </nav>
     <div class="header-actions">
-      <a href="#signin" class="btn btn-ghost">Sign in</a>
+      <span class="btn btn-ghost btn-disabled" aria-disabled="true" title="Sign in URL coming soon">Sign in</span>
       <a href="#opportunities" class="btn btn-gold" id="nav-cta">See open opportunities</a>
     </div>
   </div>
@@ -268,116 +268,7 @@
 </section>
 
 <!-- ============================================================
-     SECTION 4, OPPORTUNITIES (three conditional states)
-     ============================================================ -->
-<section class="section section-subtle" id="opportunities">
-  <div class="container">
-    <div class="section-head-row">
-      <div>
-        <p class="eyebrow">This week on the platform</p>
-        <h2 class="section-title">Current opportunities.</h2>
-      </div>
-      <a href="#" class="link-arrow">View all opportunities &rarr;</a>
-    </div>
-    <p class="section-note">Target returns shown. Not guaranteed.</p>
-
-    <!-- LIVE STATE -->
-    <div class="opps-grid" data-state-live>
-      <article class="opp-card">
-        <span class="cat-pill">Restaurant &middot; Riyadh</span>
-        <h3 class="opp-title">12-month invoice financing</h3>
-        <div class="kpi-row">
-          <div class="kpi"><div class="kpi-num kpi-num-gold tabular">7.2%</div><div class="kpi-label">Target p.a.</div></div>
-          <div class="kpi"><div class="kpi-num tabular">12 mo</div><div class="kpi-label">Tenor</div></div>
-          <div class="kpi"><div class="kpi-num tabular">500k</div><div class="kpi-label">Target</div></div>
-        </div>
-        <div class="progress"><div class="progress-fill" style="width:72%"></div></div>
-        <div class="progress-meta"><span class="tabular">72% funded</span><span>Closes in 2d</span></div>
-      </article>
-      <article class="opp-card">
-        <span class="cat-pill">POS &middot; Jeddah</span>
-        <h3 class="opp-title">24-month POS financing</h3>
-        <div class="kpi-row">
-          <div class="kpi"><div class="kpi-num kpi-num-gold tabular">7.8%</div><div class="kpi-label">Target p.a.</div></div>
-          <div class="kpi"><div class="kpi-num tabular">24 mo</div><div class="kpi-label">Tenor</div></div>
-          <div class="kpi"><div class="kpi-num tabular">1.2M</div><div class="kpi-label">Target</div></div>
-        </div>
-        <div class="progress"><div class="progress-fill" style="width:45%"></div></div>
-        <div class="progress-meta"><span class="tabular">45% funded</span><span>Closes in 5d</span></div>
-      </article>
-      <article class="opp-card">
-        <span class="cat-pill">Services &middot; Dammam</span>
-        <h3 class="opp-title">18-month monthly installment financing</h3>
-        <div class="kpi-row">
-          <div class="kpi"><div class="kpi-num kpi-num-gold tabular">7.5%</div><div class="kpi-label">Target p.a.</div></div>
-          <div class="kpi"><div class="kpi-num tabular">18 mo</div><div class="kpi-label">Tenor</div></div>
-          <div class="kpi"><div class="kpi-num tabular">750k</div><div class="kpi-label">Target</div></div>
-        </div>
-        <div class="progress"><div class="progress-fill" style="width:18%"></div></div>
-        <div class="progress-meta"><span class="tabular">18% funded</span><span>Closes in 7d</span></div>
-      </article>
-    </div>
-
-    <!-- EMPTY STATE -->
-    <div class="empty-state is-hidden" data-state-empty>
-      <div class="empty-head">
-        <h3>No open opportunities right now.</h3>
-        <p>The next opportunity opens Sunday. Opportunities typically fund within 24 hours of launch.</p>
-        <form class="notify-form notify-form-wide" onsubmit="event.preventDefault(); this.querySelector('button').textContent='You are on the list';">
-          <input type="email" placeholder="you@example.com" required>
-          <button type="submit" class="btn btn-primary">Notify me when the next opportunity opens</button>
-        </form>
-      </div>
-      <div class="sample-card-wrap">
-        <span class="sample-lbl">Sample opportunity &middot; this is what an opportunity card shows</span>
-        <article class="opp-card opp-card-sample">
-          <span class="cat-pill">Category &middot; City <span class="anno">&larr; industry and location, never a company name publicly</span></span>
-          <h3 class="opp-title">What it funds <span class="anno">&larr; POS, invoice, installment, etc.</span></h3>
-          <div class="kpi-row">
-            <div class="kpi"><div class="kpi-num kpi-num-gold tabular">7.x%</div><div class="kpi-label">Target p.a. <span class="anno">&larr; effective return</span></div></div>
-            <div class="kpi"><div class="kpi-num tabular">xx mo</div><div class="kpi-label">Tenor</div></div>
-            <div class="kpi"><div class="kpi-num tabular">SAR xxxk</div><div class="kpi-label">Target raise</div></div>
-          </div>
-          <div class="progress"><div class="progress-fill" style="width:50%; opacity:.35"></div></div>
-          <div class="progress-meta"><span>% funded</span><span>Closes in Xd</span></div>
-        </article>
-      </div>
-    </div>
-
-    <!-- BETWEEN DEALS STATE -->
-    <div class="between-state is-hidden" data-state-between>
-      <div class="between-head">
-        <p class="eyebrow">Last funded opportunity</p>
-        <h3>POS financing, Jeddah , funded in 14 hours.</h3>
-        <p>38 investors joined at a 7.6% target over 24 months. Next opportunity opens Sunday.</p>
-      </div>
-      <div class="between-grid">
-        <article class="opp-card opp-card-past">
-          <span class="cat-pill cat-pill-past">Funded &middot; 3 days ago</span>
-          <h3 class="opp-title">POS financing, Jeddah</h3>
-          <div class="kpi-row">
-            <div class="kpi"><div class="kpi-num kpi-num-gold tabular">7.6%</div><div class="kpi-label">Target</div></div>
-            <div class="kpi"><div class="kpi-num tabular">24 mo</div><div class="kpi-label">Tenor</div></div>
-            <div class="kpi"><div class="kpi-num tabular">38</div><div class="kpi-label">Investors</div></div>
-          </div>
-          <div class="progress"><div class="progress-fill progress-fill-complete" style="width:100%"></div></div>
-          <div class="progress-meta"><span>100% funded &middot; 14h</span><span>Disbursed</span></div>
-        </article>
-        <div class="between-cta">
-          <h4>Be first when the next one opens.</h4>
-          <p>Opportunities typically close within 24 hours. Email alerts give you a head start.</p>
-          <form class="notify-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='You are on the list';">
-            <input type="email" placeholder="you@example.com" required>
-            <button type="submit" class="btn btn-primary">Notify me</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     SECTION 5, UNDERSTAND RETURNS (velocity explained + 4 tools)
+     SECTION 4, UNDERSTAND RETURNS (payment story + optional tools)
      ============================================================ -->
 <section class="section" id="returns">
   <div class="container">
@@ -732,6 +623,115 @@
 </section>
 
 <!-- ============================================================
+     SECTION 5, OPPORTUNITIES (three conditional states)
+     ============================================================ -->
+<section class="section section-subtle" id="opportunities">
+  <div class="container">
+    <div class="section-head-row">
+      <div>
+        <p class="eyebrow">This week on the platform</p>
+        <h2 class="section-title">Current opportunities.</h2>
+      </div>
+      <a href="#" class="link-arrow">View all opportunities &rarr;</a>
+    </div>
+    <p class="section-note">Target returns shown. Not guaranteed.</p>
+
+    <!-- LIVE STATE -->
+    <div class="opps-grid" data-state-live>
+      <article class="opp-card">
+        <span class="cat-pill">Restaurant &middot; Riyadh</span>
+        <h3 class="opp-title">12-month invoice financing</h3>
+        <div class="kpi-row">
+          <div class="kpi"><div class="kpi-num kpi-num-gold tabular">7.2%</div><div class="kpi-label">Target p.a.</div></div>
+          <div class="kpi"><div class="kpi-num tabular">12 mo</div><div class="kpi-label">Tenor</div></div>
+          <div class="kpi"><div class="kpi-num tabular">500k</div><div class="kpi-label">Target</div></div>
+        </div>
+        <div class="progress"><div class="progress-fill" style="width:72%"></div></div>
+        <div class="progress-meta"><span class="tabular">72% funded</span><span>Closes in 2d</span></div>
+      </article>
+      <article class="opp-card">
+        <span class="cat-pill">POS &middot; Jeddah</span>
+        <h3 class="opp-title">24-month POS financing</h3>
+        <div class="kpi-row">
+          <div class="kpi"><div class="kpi-num kpi-num-gold tabular">7.8%</div><div class="kpi-label">Target p.a.</div></div>
+          <div class="kpi"><div class="kpi-num tabular">24 mo</div><div class="kpi-label">Tenor</div></div>
+          <div class="kpi"><div class="kpi-num tabular">1.2M</div><div class="kpi-label">Target</div></div>
+        </div>
+        <div class="progress"><div class="progress-fill" style="width:45%"></div></div>
+        <div class="progress-meta"><span class="tabular">45% funded</span><span>Closes in 5d</span></div>
+      </article>
+      <article class="opp-card">
+        <span class="cat-pill">Services &middot; Dammam</span>
+        <h3 class="opp-title">18-month monthly installment financing</h3>
+        <div class="kpi-row">
+          <div class="kpi"><div class="kpi-num kpi-num-gold tabular">7.5%</div><div class="kpi-label">Target p.a.</div></div>
+          <div class="kpi"><div class="kpi-num tabular">18 mo</div><div class="kpi-label">Tenor</div></div>
+          <div class="kpi"><div class="kpi-num tabular">750k</div><div class="kpi-label">Target</div></div>
+        </div>
+        <div class="progress"><div class="progress-fill" style="width:18%"></div></div>
+        <div class="progress-meta"><span class="tabular">18% funded</span><span>Closes in 7d</span></div>
+      </article>
+    </div>
+
+    <!-- EMPTY STATE -->
+    <div class="empty-state is-hidden" data-state-empty>
+      <div class="empty-head">
+        <h3>No open opportunities right now.</h3>
+        <p>The next opportunity opens Sunday. Opportunities typically fund within 24 hours of launch.</p>
+        <form class="notify-form notify-form-wide" onsubmit="event.preventDefault(); this.querySelector('button').textContent='You are on the list';">
+          <input type="email" placeholder="you@example.com" required>
+          <button type="submit" class="btn btn-primary">Notify me when the next opportunity opens</button>
+        </form>
+      </div>
+      <div class="sample-card-wrap">
+        <span class="sample-lbl">Sample opportunity &middot; this is what an opportunity card shows</span>
+        <article class="opp-card opp-card-sample">
+          <span class="cat-pill">Category &middot; City <span class="anno">&larr; industry and location, never a company name publicly</span></span>
+          <h3 class="opp-title">What it funds <span class="anno">&larr; POS, invoice, installment, etc.</span></h3>
+          <div class="kpi-row">
+            <div class="kpi"><div class="kpi-num kpi-num-gold tabular">7.x%</div><div class="kpi-label">Target p.a. <span class="anno">&larr; effective return</span></div></div>
+            <div class="kpi"><div class="kpi-num tabular">xx mo</div><div class="kpi-label">Tenor</div></div>
+            <div class="kpi"><div class="kpi-num tabular">SAR xxxk</div><div class="kpi-label">Target raise</div></div>
+          </div>
+          <div class="progress"><div class="progress-fill" style="width:50%; opacity:.35"></div></div>
+          <div class="progress-meta"><span>% funded</span><span>Closes in Xd</span></div>
+        </article>
+      </div>
+    </div>
+
+    <!-- BETWEEN DEALS STATE -->
+    <div class="between-state is-hidden" data-state-between>
+      <div class="between-head">
+        <p class="eyebrow">Last funded opportunity</p>
+        <h3>POS financing, Jeddah , funded in 14 hours.</h3>
+        <p>38 investors joined at a 7.6% target over 24 months. Next opportunity opens Sunday.</p>
+      </div>
+      <div class="between-grid">
+        <article class="opp-card opp-card-past">
+          <span class="cat-pill cat-pill-past">Funded &middot; 3 days ago</span>
+          <h3 class="opp-title">POS financing, Jeddah</h3>
+          <div class="kpi-row">
+            <div class="kpi"><div class="kpi-num kpi-num-gold tabular">7.6%</div><div class="kpi-label">Target</div></div>
+            <div class="kpi"><div class="kpi-num tabular">24 mo</div><div class="kpi-label">Tenor</div></div>
+            <div class="kpi"><div class="kpi-num tabular">38</div><div class="kpi-label">Investors</div></div>
+          </div>
+          <div class="progress"><div class="progress-fill progress-fill-complete" style="width:100%"></div></div>
+          <div class="progress-meta"><span>100% funded &middot; 14h</span><span>Disbursed</span></div>
+        </article>
+        <div class="between-cta">
+          <h4>Be first when the next one opens.</h4>
+          <p>Opportunities typically close within 24 hours. Email alerts give you a head start.</p>
+          <form class="notify-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='You are on the list';">
+            <input type="email" placeholder="you@example.com" required>
+            <button type="submit" class="btn btn-primary">Notify me</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
      PULL-QUOTE DIVIDER (visual rest beat, breaks the prose rhythm)
      ============================================================ -->
 <section class="pull-quote-section" aria-hidden="true">
@@ -978,9 +978,9 @@
     </div>
     <div class="footer-col">
       <h5>Platform</h5>
-      <a href="#opportunities">Opportunities</a>
       <a href="#how">How it works</a>
-      <a href="#returns">Calculator</a>
+      <a href="#returns">Returns</a>
+      <a href="#opportunities">Opportunities</a>
       <a href="#faq">FAQ</a>
     </div>
     <div class="footer-col">
