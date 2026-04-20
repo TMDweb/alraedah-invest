@@ -163,6 +163,11 @@
     document.querySelectorAll('.tool-tab').forEach(tab => {
       tab.addEventListener('click', () => setToolTab(tab.dataset.tool));
     });
+    document.querySelectorAll('.advanced-tools').forEach(details => {
+      details.addEventListener('toggle', () => {
+        if (details.open && window.AInvest.redrawGraph) window.AInvest.redrawGraph();
+      });
+    });
 
     // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', smoothScroll));
