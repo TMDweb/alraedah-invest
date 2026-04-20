@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Commercial fonts (Ping AR) — do not redistribute; loaded from client env in prod
+fonts/*.otf
+fonts/*.ttf
+fonts/*.woff
+fonts/*.woff2
+
+# Internal working docs
+README-internal.md
