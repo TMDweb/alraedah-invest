@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 490" role="img" aria-label="Alraedah Invest">
+  <title>Alraedah Invest</title>
+  <!-- Parent lockup (Arabic wordmark + Latin 'alraedah' + diamond mark) -->
+  <image href="alraedah-parent.png" x="0" y="0" width="800" height="378" preserveAspectRatio="xMidYMid meet"/>
+  <!-- 'Invest' descriptor beneath, matching the client Invest.pdf convention -->
+  <text x="400" y="470"
+        text-anchor="middle"
+        font-family="Inter, 'Aktiv Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif"
+        font-weight="500"
+        font-size="68"
+        letter-spacing="0.18em"
+        fill="#01B3E3">Invest</text>
+</svg>

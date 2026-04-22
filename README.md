@@ -75,3 +75,12 @@ Questions or feedback: [invest@alraedah.sa](mailto:invest@alraedah.sa)
 ---
 
 *Built by TMD for Alraedah.*
+
+## Polish-pass-v1 preview
+
+A parallel, lightly-revised version of this page is served at:
+
+**https://tmdweb.github.io/alraedah-invest/v2/**
+
+It contains a Section-4 internal reorder, tighter FAQ, SEO/social metadata,
+and minor UX refinements. Discussion and diff: see PR #1.
