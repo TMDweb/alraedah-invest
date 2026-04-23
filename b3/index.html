@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alraedah Invest, Opportunity Announcement Templates, B3</title>
+  <meta name="description" content="35-variant showcase: 7 lifecycle phases across 5 channel surfaces.">
+
+  <!-- Preview build, not for public indexing -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+
+  <link rel="icon" type="image/png" href="assets/logos/alraedah-invest-official.png">
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <h1>Opportunity announcement templates</h1>
+  <p>35 variants across 7 lifecycle phases and 5 channel surfaces. Click any thumbnail for the full-size variant, copy block, and variable list.</p>
+</header>
+
+<section class="controls">
+  <div class="controls-row">
+    <span class="controls-label">Phase</span>
+    <div id="phase-filter" class="filter-group"></div>
+  </div>
+  <div class="controls-row">
+    <span class="controls-label">Channel</span>
+    <div id="channel-filter" class="filter-group"></div>
+    <div class="controls-actions">
+      <button type="button" class="action-btn" id="toggle-lang">Show Arabic</button>
+      <button type="button" class="action-btn" id="toggle-populated">Show populated sample</button>
+    </div>
+  </div>
+</section>
+
+<div class="count" id="count">35 variants</div>
+
+<main class="grid" id="grid"></main>
+
+<div id="modal" aria-hidden="true">
+  <div class="modal-inner">
+    <button type="button" id="modal-close" aria-label="Close">×</button>
+    <div class="modal-stage" id="modal-stage"></div>
+    <aside class="modal-side" id="modal-info"></aside>
+  </div>
+</div>
+
+<script src="scripts/data.js"></script>
+<script src="scripts/showcase.js"></script>
+</body>
+</html>

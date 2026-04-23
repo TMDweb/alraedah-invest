@@ -1,0 +1,257 @@
+/* ==========================================================================
+   Alraedah Invest, Design tokens
+   Branded-house Level B divergence from Alraedah Finance (parent).
+   Launch content is English-only; Arabic system surfaces are wired but
+   unpopulated. Do not add "guaranteed" semantics anywhere.
+   ========================================================================== */
+
+/* ---- Fonts -------------------------------------------------------------- */
+/* Aktiv Grotesk is the specified primary but is a commercial font.
+   Substituted with Inter (Latin), closest open-source geometric grotesk
+   with tabular figures. User: please provide Aktiv Grotesk web files. */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@font-face {
+  font-family: 'Ping AR';
+  src: url('fonts/PingAR+LT-Light.otf') format('opentype');
+  font-weight: 300; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Ping AR';
+  src: url('fonts/PingAR+LT-Regular.otf') format('opentype');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Ping AR';
+  src: url('fonts/PingAR+LT-Medium.otf') format('opentype');
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Ping AR';
+  src: url('fonts/PingAR+LT-Bold.otf') format('opentype');
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Ping AR';
+  src: url('fonts/PingAR+LT-Black.otf') format('opentype');
+  font-weight: 900; font-style: normal; font-display: swap;
+}
+
+:root {
+  /* ---- Color primitives (parent-inherited) ----------------------------- */
+  --blue-primary: #07439B;    /* structural chassis, primary CTA */
+  --blue-dark:    #00326D;    /* headlines, gradient anchors */
+  --gold:         #F1C31B;    /* wealth/return accent (elevated for Invest) */
+  --cyan:         #01B3E3;    /* data callouts, chart accent */
+
+  /* Tinted scale, derived from blue-primary */
+  --blue-50:  #EEF3FB;
+  --blue-100: #D8E3F4;
+  --blue-200: #AEC3E7;
+  --blue-300: #7EA0D6;
+  --blue-400: #4A78C2;
+  --blue-500: #07439B;
+  --blue-600: #063C8B;
+  --blue-700: #04347A;
+  --blue-800: #00326D;
+  --blue-900: #0B1A33;
+
+  --gold-50:  #FEF9E3;
+  --gold-100: #FBEDA0;
+  --gold-200: #F7DF5F;
+  --gold-300: #F4D236;
+  --gold-400: #F1C31B;
+  --gold-500: #D4A911;
+  --gold-600: #A5830B;
+
+  --cyan-50:  #E3F6FC;
+  --cyan-100: #B7E8F7;
+  --cyan-200: #7FD5F1;
+  --cyan-300: #3EC2EA;
+  --cyan-400: #01B3E3;
+  --cyan-500: #0194BB;
+
+  /* Neutrals */
+  --white:   #FFFFFF;
+  --ink:     #0B1A33;
+  --ink-80:  rgba(11, 26, 51, 0.80);
+  --ink-60:  rgba(11, 26, 51, 0.60);
+  --ink-40:  rgba(11, 26, 51, 0.40);
+  --ink-20:  rgba(11, 26, 51, 0.20);
+  --ink-10:  rgba(11, 26, 51, 0.10);
+  --ink-05:  rgba(11, 26, 51, 0.05);
+  --hairline: #E4EAF2;
+  --surface-light: #F7F9FC;
+  --surface-pale:  #EEF3FB;
+
+  /* ---- Semantic tokens ------------------------------------------------- */
+  --bg-page:     #FFFFFF;
+  --bg-subtle:   var(--surface-light);
+  --bg-pale:     var(--surface-pale);
+  --bg-inverse:  var(--blue-800);
+
+  --fg-1:        var(--ink);           /* primary body */
+  --fg-2:        var(--ink-80);        /* secondary */
+  --fg-3:        var(--ink-60);        /* tertiary, captions */
+  --fg-muted:    var(--ink-40);        /* disabled, sub-labels */
+  --fg-on-dark:  var(--white);
+  --fg-on-blue:  var(--white);
+  --fg-on-gold:  var(--blue-800);      /* gold bg always takes dark text */
+
+  --border:      var(--hairline);
+  --border-strong: var(--ink-20);
+
+  --accent:        var(--gold);        /* Invest divergence: gold is primary accent */
+  --accent-fg:     var(--blue-800);
+  --data-accent:   var(--cyan);        /* charts + info states */
+  --data-accent-fg: var(--white);
+
+  /* Action colors */
+  --action-primary:    var(--blue-primary);
+  --action-primary-hover: var(--blue-600);
+  --action-primary-press: var(--blue-700);
+  --action-primary-fg: var(--white);
+
+  --action-secondary:      var(--white);
+  --action-secondary-fg:   var(--blue-primary);
+  --action-secondary-border: var(--blue-primary);
+
+  /* Semantic (status), derived to pass AA on white bg */
+  --success:     #0B7A4B;
+  --success-bg:  #E3F3EC;
+  --warning:     #B5620A;   /* "closing soon" amber, not gold; gold is brand */
+  --warning-bg:  #FCEFDB;
+  --danger:      #B42318;
+  --danger-bg:   #FEE4E2;
+  --muted:       var(--fg-muted);
+  --muted-bg:    var(--surface-pale);
+
+  /* Risk-grade scale (A = best, E = worst). Neutral hues,
+     low saturation on purpose, we are not a casino. */
+  --grade-a: #0B7A4B;
+  --grade-b: #3C8B5A;
+  --grade-c: #8A7B22;
+  --grade-d: #B5620A;
+  --grade-e: #B42318;
+  --grade-placeholder: var(--ink-40); /* launch-day fallback: neutral dash */
+
+  /* ---- Typography ------------------------------------------------------- */
+  --font-latin:  'Inter', 'Aktiv Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  --font-arabic: 'Ping AR', 'Aktiv Grotesk Arabic', 'Inter', sans-serif;
+  --font-num:    'Inter', 'Aktiv Grotesk', ui-monospace, monospace; /* tabular figures */
+
+  /* Type scale, desktop; components supply mobile overrides */
+  --fs-display-xl: 64px;    --lh-display-xl: 1.05;  --ls-display-xl: -0.02em;
+  --fs-display-lg: 48px;    --lh-display-lg: 1.08;  --ls-display-lg: -0.015em;
+  --fs-heading-lg: 32px;    --lh-heading-lg: 1.15;  --ls-heading-lg: -0.01em;
+  --fs-heading-md: 24px;    --lh-heading-md: 1.25;  --ls-heading-md: -0.005em;
+  --fs-heading-sm: 18px;    --lh-heading-sm: 1.3;
+  --fs-body-lg:    18px;    --lh-body-lg:    1.55;
+  --fs-body-md:    16px;    --lh-body-md:    1.55;
+  --fs-body-sm:    14px;    --lh-body-sm:    1.5;
+  --fs-caption:    12px;    --lh-caption:    1.4;
+  --fs-disclosure: 12px;    --lh-disclosure: 1.45;
+
+  --fs-num-hero: 56px;      /* return %, big KPIs */
+  --fs-num-lg:   40px;
+  --fs-num-md:   28px;
+  --fs-num-sm:   18px;
+
+  /* Weights */
+  --fw-regular:  400;
+  --fw-medium:   500;
+  --fw-semibold: 600;
+  --fw-bold:     700;
+  --fw-black:    800;
+
+  /* ---- Spacing (8px base) ---------------------------------------------- */
+  --space-0:  0;
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-7:  32px;
+  --space-8:  40px;
+  --space-9:  48px;
+  --space-10: 64px;
+  --space-11: 80px;
+  --space-12: 96px;
+  --space-13: 128px;
+
+  /* Content widths */
+  --container-sm:   640px;
+  --container-md:   960px;
+  --container-lg:   1200px;
+  --container-xl:   1440px;
+
+  /* ---- Radius ---------------------------------------------------------- */
+  --r-xs:   4px;
+  --r-sm:   8px;
+  --r-md:   12px;    /* default cards */
+  --r-lg:   16px;    /* hero cards */
+  --r-xl:   24px;
+  --r-pill: 999px;   /* pill chips (prebrand vocabulary) */
+
+  /* ---- Shadow / elevation ---------------------------------------------- */
+  /* Calm and low, wealth-management register, not fintech pop */
+  --shadow-1: 0 1px 2px rgba(11, 26, 51, 0.04), 0 1px 1px rgba(11, 26, 51, 0.03);
+  --shadow-2: 0 2px 4px rgba(11, 26, 51, 0.05), 0 1px 2px rgba(11, 26, 51, 0.04);
+  --shadow-3: 0 6px 16px rgba(11, 26, 51, 0.06), 0 2px 4px rgba(11, 26, 51, 0.04);
+  --shadow-4: 0 16px 32px rgba(11, 26, 51, 0.08), 0 4px 8px rgba(11, 26, 51, 0.04);
+  --shadow-focus: 0 0 0 3px rgba(7, 67, 155, 0.25);
+  --shadow-focus-gold: 0 0 0 3px rgba(241, 195, 27, 0.35);
+
+  /* ---- Motion ---------------------------------------------------------- */
+  /* Calm, numbers count up truthfully, no decorative oscillation */
+  --motion-fast:   120ms;
+  --motion-base:   200ms;
+  --motion-slow:   320ms;
+  --motion-count:  800ms;   /* count-ups */
+  --motion-ease:   cubic-bezier(0.2, 0.6, 0.2, 1);
+  --motion-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* ---- Z-index --------------------------------------------------------- */
+  --z-sticky:  100;
+  --z-overlay: 500;
+  --z-modal:   1000;
+  --z-toast:   1100;
+}
+
+/* ---- Base ---------------------------------------------------------------- */
+html, body {
+  font-family: var(--font-latin);
+  font-size: var(--fs-body-md);
+  line-height: var(--lh-body-md);
+  color: var(--fg-1);
+  background: var(--bg-page);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'tnum' 0;  /* default proportional; opt in to tabular on numbers */
+}
+
+/* RTL, the architecture switches on dir="rtl" */
+[dir="rtl"] { font-family: var(--font-arabic); }
+[dir="rtl"] body { font-family: var(--font-arabic); }
+
+/* ---- Semantic typography classes (paired to tokens) --------------------- */
+.t-display-xl { font: var(--fw-bold) var(--fs-display-xl)/var(--lh-display-xl) var(--font-latin); letter-spacing: var(--ls-display-xl); color: var(--blue-800); }
+.t-display-lg { font: var(--fw-bold) var(--fs-display-lg)/var(--lh-display-lg) var(--font-latin); letter-spacing: var(--ls-display-lg); color: var(--blue-800); }
+.t-heading-lg { font: var(--fw-semibold) var(--fs-heading-lg)/var(--lh-heading-lg) var(--font-latin); letter-spacing: var(--ls-heading-lg); color: var(--blue-800); }
+.t-heading-md { font: var(--fw-semibold) var(--fs-heading-md)/var(--lh-heading-md) var(--font-latin); color: var(--blue-800); }
+.t-heading-sm { font: var(--fw-semibold) var(--fs-heading-sm)/var(--lh-heading-sm) var(--font-latin); color: var(--blue-800); }
+.t-body-lg    { font: var(--fw-regular) var(--fs-body-lg)/var(--lh-body-lg) var(--font-latin); color: var(--fg-1); }
+.t-body-md    { font: var(--fw-regular) var(--fs-body-md)/var(--lh-body-md) var(--font-latin); color: var(--fg-1); }
+.t-body-sm    { font: var(--fw-regular) var(--fs-body-sm)/var(--lh-body-sm) var(--font-latin); color: var(--fg-2); }
+.t-caption    { font: var(--fw-medium) var(--fs-caption)/var(--lh-caption) var(--font-latin); color: var(--fg-3); text-transform: uppercase; letter-spacing: 0.08em; }
+.t-disclosure { font: var(--fw-regular) var(--fs-disclosure)/var(--lh-disclosure) var(--font-latin); color: var(--fg-3); }
+.t-num-hero   { font: var(--fw-bold) var(--fs-num-hero)/1 var(--font-num); font-feature-settings: 'tnum' 1; letter-spacing: -0.01em; color: var(--blue-800); }
+.t-num-lg     { font: var(--fw-bold) var(--fs-num-lg)/1 var(--font-num); font-feature-settings: 'tnum' 1; letter-spacing: -0.01em; color: var(--blue-800); }
+.t-num-md     { font: var(--fw-semibold) var(--fs-num-md)/1 var(--font-num); font-feature-settings: 'tnum' 1; color: var(--blue-800); }
+.t-num-sm     { font: var(--fw-semibold) var(--fs-num-sm)/1 var(--font-num); font-feature-settings: 'tnum' 1; color: var(--blue-800); }
+
+/* ---- Utility atoms ------------------------------------------------------ */
+.tabular { font-feature-settings: 'tnum' 1; }
+.hairline { border-top: 1px solid var(--border); }
+:focus-visible { outline: none; box-shadow: var(--shadow-focus); border-radius: var(--r-xs); }
