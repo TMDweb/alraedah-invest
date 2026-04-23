@@ -94,3 +94,13 @@ form) is served alongside the landing page at:
 **https://tmdweb.github.io/alraedah-invest/b3/**
 
 Copy-only, no design. A downloadable Word version is linked from the page.
+
+## B4 explainer videos
+
+Three 30-second explainer videos, served at:
+
+**https://tmdweb.github.io/alraedah-invest/b4/**
+
+Video D (how to invest in 3 steps) is ready for review; Videos A and B
+follow once D is signed off. Each ready video ships a script, wireframe
+storyboard, and asset list for the animation vendor.
