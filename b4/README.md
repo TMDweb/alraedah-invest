@@ -8,9 +8,14 @@ Three 30-second explainer videos. Each video ships as a script, a storyboard, an
 
 ## Status
 
-- **Video D, How to invest in 3 steps** — ready for review. First pass shipped. Reviews here shape the direction for A and B.
-- **Video A, What is debt crowdfunding** — coming next, after Video D is signed off.
-- **Video B, Why Alraedah Invest** — coming next, after Video D is signed off.
+All four videos ready for review.
+
+- **A, What is debt crowdfunding.** Category education. 6 frames.
+- **B, Why Alraedah Invest.** Brand differentiation. 6 frames.
+- **C, Monthly reinvested vs. the bank.** Reinvest advantage, mirrors the landing-page calculator numbers. 6 frames.
+- **D, How to invest in 3 steps.** Product walkthrough. 5 frames.
+
+Run in A → B → C → D order for the full pitch in 120 seconds. Any one can also stand alone.
 
 ## What each ready video contains
 
