@@ -36,9 +36,11 @@ Weekly opportunity copy across seven lifecycle phases, bilingual, with three len
 
 ## Variable slots
 
-Twelve tokens appear across phases, visible in gold when the app is set to "Show slots". Click "Show populated" to see what a real live post reads like with sample values substituted.
+Seven tokens, each directly relevant to the investment decision. The copy deliberately avoids category/city details so social posts do not overlap with the parent company's POS business.
 
-`{{category}}`, `{{city}}`, `{{target_return}}`, `{{tenor}}`, `{{target_raise}}`, `{{funded_pct}}`, `{{open_time}}`, `{{open_day}}`, `{{next_open_day}}`, `{{investor_count}}`, `{{funded_hours}}`, `{{opportunity_name}}`
+`{{target_return}}`, `{{tenor}}`, `{{funded_pct}}`, `{{open_time}}`, `{{next_open_day}}`, `{{investor_count}}`, `{{funded_hours}}`
+
+The app loads with populated sample values by default. Toggle the Variables control to "Show slots" when you want to see the underlying template tokens.
 
 ## How to use it
 

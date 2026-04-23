@@ -199,7 +199,7 @@
   }
 
   function init() {
-    const state = { phaseIndex: 0, lang: 'both', populated: false };
+    const state = { phaseIndex: 0, lang: 'both', populated: true };
     const refresh = () => { refreshTabs(state); renderActivePanel(state); };
 
     buildTabs(state, refresh);
