@@ -85,12 +85,12 @@ A parallel, lightly-revised version of this page is served at:
 It contains a Section-4 internal reorder, tighter FAQ, SEO/social metadata,
 and minor UX refinements. Discussion and diff: see PR #1.
 
-## B3 opportunity templates showcase
+## B3 opportunity announcement copy
 
-The opportunity-announcement templates (35 variants, 7 phases × 5 channels) are
-served alongside the landing page at:
+The bilingual copy reference for the weekly opportunity lifecycle (seven
+phases, each in three forms: standard, LinkedIn long caption, story short
+form) is served alongside the landing page at:
 
 **https://tmdweb.github.io/alraedah-invest/b3/**
 
-Click phase or channel filters to narrow. Toggle `Show Arabic` to flip language.
-Toggle `Show populated sample` to replace variable slots with concrete values.
+Copy-only, no design. A downloadable Word version is linked from the page.

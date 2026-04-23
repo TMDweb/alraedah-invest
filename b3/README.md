@@ -1,82 +1,70 @@
-# B3, Alraedah Invest Opportunity Announcement Templates
+# B3, Alraedah Invest Opportunity Announcement Copy
 
-Third TMD deliverable. An interactive HTML showcase of 35 rendered social-media variants (7 lifecycle phases × 5 channel surfaces), plus a bilingual copy template with variable slots.
+Copywriting reference for the weekly opportunity lifecycle. Seven phases, bilingual. No design, no visuals: words only. Design of the finished posts is handled separately.
 
 ## Live preview
 
-Once pushed to GitHub Pages: **https://tmdweb.github.io/alraedah-invest/b3/**
+**https://tmdweb.github.io/alraedah-invest/b3/**
 
 Locally: open `index.html` in any modern browser.
-
-## What's in the page
-
-- **35 rendered variants.** Phase × channel grid, clickable for a full-size detail modal.
-- **Two filter bars.** Filter by phase (coming-soon generic, coming-soon with details, launching tomorrow generic, launching tomorrow with details, launched generic, launched with details, fully funded) and by channel (LinkedIn feed, LinkedIn square, X, Instagram feed, Instagram story).
-- **Two view toggles.**
-  - `Show Arabic` flips all visible variants to the Arabic copy (RTL layout, Ping AR font stack).
-  - `Show populated sample` replaces variable tokens like `{{target_return}}` with concrete sample values so you see what a real live post looks like.
 
 ## Files
 
 | File | Contains |
 |---|---|
-| `index.html` | Showcase shell with header, filter controls, grid, and detail modal. |
-| `tokens.css` | Design tokens copied from B1. |
-| `styles.css` | Showcase chrome + template layouts per channel. Each channel renders at its native pixel size. |
-| `scripts/data.js` | Seven phases of copy (English + Arabic) plus sample values. Single source of truth: edit here to update all 35 variants. |
-| `scripts/showcase.js` | Renderer, filters, language toggle, populated toggle, detail modal. |
-| `copy-template.docx` | Text-form bilingual reference of the same copy, with timing notes, variable glossary, and sample-value table. For client and legal review. |
-| `assets/logos/` | Parent Alraedah lockup, shared with B1. |
+| `index.html` | Copywriting reference document. Seven phases, each with three copy variants (standard, LinkedIn long caption, story short form), English and Arabic side by side. |
+| `tokens.css` | Design tokens copied from B1 for visual consistency with the rest of the programme. |
+| `styles.css` | Typography-focused styles for readable copy presentation. |
+| `copy-template.docx` | Downloadable Word version of the same content. Paste into Google Docs if that is the working medium. |
+| `assets/logos/` | Favicon and shared logo. |
 
-## Channels
+## What's in the doc
 
-| Channel | Dimensions | Aspect |
-|---|---|---|
-| LinkedIn feed | 1200 × 628 | 1.91 : 1 landscape |
-| LinkedIn square | 1080 × 1080 | 1 : 1 |
-| X (Twitter) | 1600 × 900 | 1.78 : 1 landscape |
-| Instagram feed | 1080 × 1440 | 4 : 5 portrait |
-| Instagram story | 1080 × 1920 | 9 : 16 tall portrait |
+**Seven phases**, covering the full opportunity lifecycle:
 
-Every template renders at its native pixel size in the DOM, scaled down visually via CSS `transform: scale()` for thumbnails. Screenshots taken from the detail modal (or an 100%-zoom browser) are production-ready sizes.
+1. Coming soon, generic (T minus 5 to 3 days)
+2. Coming soon, with details (T minus 2 to 1 days)
+3. Launching tomorrow, generic (T minus 1 day)
+4. Launching tomorrow, with details (T minus 1, final push)
+5. Launched, generic (T = 0)
+6. Launched, with details (T = 0 to T + 24h, primary conversion post)
+7. Fully funded celebration (within 2h of full funding)
 
-## Phases
+**Three forms per phase**:
 
-| # | Name | Timing | Uses variables |
-|---|---|---|---|
-| 1 | Coming soon, generic | T minus 5 to 3 days | No |
-| 2 | Coming soon, with details | T minus 2 to 1 days | Yes |
-| 3 | Launching tomorrow, generic | T minus 1 day | `{{open_time}}` |
-| 4 | Launching tomorrow, with details | T minus 1, final push | Yes |
-| 5 | Launched, generic | T = 0 | No |
-| 6 | Launched, with details | T = 0 to T + 24h | Yes, primary conversion post |
-| 7 | Fully funded celebration | Within 2h of full funding | Yes |
+- **Standard form.** The atomic copy elements (kicker, headline, body, chips, CTA). A designer composes these into any visual layout.
+- **LinkedIn long caption.** A 2 to 4 sentence expansion for the text body of a LinkedIn post.
+- **Story short form.** Two to three line compressed version for Instagram story or WhatsApp status, for tight-space surfaces.
+
+**Bilingual**: English and Arabic, side by side per phase. Arabic register follows the foundational Alraedah Invest doc (conversational Saudi Arabic).
 
 ## Variable slots
 
-Twelve slots available across phases. See `copy-template.docx` for the full glossary.
+Twelve variable tokens appear across the phases: `{{category}}`, `{{city}}`, `{{target_return}}`, `{{tenor}}`, `{{target_raise}}`, `{{funded_pct}}`, `{{open_time}}`, `{{open_day}}`, `{{next_open_day}}`, `{{investor_count}}`, `{{funded_hours}}`, `{{opportunity_name}}`. Full glossary and sample values are in the Variables and Sample values sections of the HTML doc.
 
-`{{category}}`, `{{city}}`, `{{target_return}}`, `{{tenor}}`, `{{target_raise}}`, `{{funded_pct}}`, `{{open_time}}`, `{{open_day}}`, `{{next_open_day}}`, `{{investor_count}}`, `{{funded_hours}}`, `{{opportunity_name}}`
+## What this is NOT
 
-## How production uses this
-
-1. Marketing picks a phase (e.g. phase 6 for the primary conversion post).
-2. The CMS or social scheduler reads `data.js` (or the copy-template.docx) for the copy skeleton of that phase.
-3. Variable tokens are substituted with the opportunity's real data.
-4. The rendered variant at each channel's pixel size is posted with the substituted copy.
-
-If the team runs production manually instead of via CMS: open the showcase, click the phase + channel needed, click the variant, copy the fields from the detail modal, and screenshot the stage to get the image at the right size.
+- **Not a design deliverable.** There are no rendered opportunity-card visuals in this folder. Design of the finished posts is a separate track (Figma / Photoshop) executed by a designer consuming this copy.
+- **Not a template renderer.** The earlier version of this folder included a 35-variant HTML showcase with CSS-scaled template thumbnails. That has been removed per client direction; quality of design at that level needs proper art direction, not browser-rendered wireframes.
 
 ## Compliance notes
 
-- No "not guaranteed" disclaimer inside any post body. The compliance floor ("Licensed by SAMA") lives in the footer of every variant.
-- Arabic footer uses the prebrand-established phrase: `خاضعة لرقابة البنك المركزي السعودي`.
-- Every post that contains a number (rate, tenor, raise amount, funded percentage, investor count) needs legal review per opportunity. Flag in `asset-index.csv` before publishing.
-- No hashtags by default, matching the B2 decision.
-- No `app.alraedah.sa` references, replacing the out-of-date URL from the legacy template.
+- No "not guaranteed" disclaimers inside any post body. If a channel requires an inline regulator reference, use the prebrand phrase: English "Licensed by SAMA" / Arabic "خاضعة لرقابة البنك المركزي السعودي."
+- No hashtags by default.
+- No `app.alraedah.sa` references (the legacy template URL is out of date).
+- Every post containing a number needs legal review per opportunity. Track in `asset-index.csv` from B2.
+
+## Production flow
+
+1. Marketing picks the phase needed for the day (e.g. phase 6 for the primary conversion post).
+2. Copy is read from either this HTML page or `copy-template.docx`.
+3. Variable tokens are filled with the opportunity's real values.
+4. A designer composes the words into the visual layout for each channel.
+5. Published via the client's social-scheduling tool.
 
 ## What's next
 
-- **Legal review.** Disclaimer variants from B2 apply here too. Once legal signs off on a phrasing, update the footer text in `scripts/data.js` and rebuild the showcase.
-- **Arabic register lock.** The client should confirm whether the Arabic register (currently conversational Saudi, matching the foundational doc) is right or if it should shift to more formal MSA.
-- **Image production.** For each opportunity, the production team populates variables and screenshots the rendered variant from the modal at 1:1 zoom. That image is the post asset.
+- **Client review** of the copy across the seven phases in both languages.
+- **Legal sign-off** on the standard form of each phase, especially numeric claims.
+- **Arabic register lock** if the client prefers a shift from conversational Saudi toward more formal MSA.
+- **Design track** for the finished visual compositions, handled separately.

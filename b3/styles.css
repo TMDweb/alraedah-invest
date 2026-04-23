@@ -1,442 +1,348 @@
 /* ==========================================================================
-   Alraedah Invest, B3 Opportunity Templates, showcase + template styles
-   Built on top of tokens.css. The showcase chrome uses one typography stack;
-   each channel template uses its real pixel size then scales in the grid.
+   Alraedah Invest, B3 Copy Reference, styles
+   Typography-focused. No visual templates, no illustrations. Built for
+   legibility of copy blocks across English and Arabic.
    ========================================================================== */
 
 * { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; font-family: var(--font-latin); color: var(--fg-1); }
+html, body { margin: 0; padding: 0; }
 html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-a { color: var(--blue-primary); text-decoration: none; }
-h1, h2, h3 { text-wrap: balance; }
+
+body {
+  background: var(--bg-subtle);
+  color: var(--fg-1);
+  font-family: var(--font-latin);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+h1, h2, h3, h4 { text-wrap: balance; }
 p { text-wrap: pretty; }
+a { color: var(--blue-primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+code {
+  background: var(--gold-50);
+  color: var(--gold-600);
+  padding: 1px 6px;
+  border-radius: 3px;
+  font: 600 0.9em / 1.2 var(--font-num);
+  white-space: nowrap;
+}
 
 /* =========================================================================
-   Showcase chrome
+   Header
    ========================================================================= */
-body { background: var(--bg-subtle); min-height: 100vh; }
-
-.site-header {
+.doc-header {
   background: var(--white);
   border-bottom: 1px solid var(--border);
-  padding: 20px 32px;
-  position: sticky; top: 0; z-index: 10;
 }
-.site-header h1 {
-  font: 700 22px/1.2 var(--font-latin);
+.doc-header-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 48px 32px 24px;
+}
+.doc-kicker {
+  font: 600 12px/1 var(--font-latin);
+  color: var(--blue-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  margin: 0 0 10px;
+}
+.doc-header h1 {
+  font: 700 40px/1.1 var(--font-latin);
   color: var(--blue-800);
-  margin: 0 0 4px;
+  letter-spacing: -0.015em;
+  margin: 0 0 16px;
 }
-.site-header p {
-  font: 400 14px/1.4 var(--font-latin);
+.doc-lede {
+  font: 400 18px/1.55 var(--font-latin);
+  color: var(--fg-2);
+  max-width: 720px;
+  margin: 0 0 16px;
+}
+.doc-download {
+  font: 500 14px/1.4 var(--font-latin);
   color: var(--fg-3);
   margin: 0;
 }
-
-.controls {
-  padding: 20px 32px;
-  background: var(--white);
-  border-bottom: 1px solid var(--border);
-}
-.controls-row {
-  display: flex; gap: 12px; align-items: center; flex-wrap: wrap;
-  margin-bottom: 12px;
-}
-.controls-row:last-child { margin-bottom: 0; }
-.controls-label {
-  font: 600 11px/1 var(--font-latin);
-  color: var(--fg-3);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  min-width: 80px;
-  flex-shrink: 0;
-}
-.controls-actions {
-  margin-left: auto;
-  display: flex; gap: 10px;
+.doc-download a {
+  font-weight: 600;
 }
 
-.filter-chip {
-  font: 500 13px/1 var(--font-latin);
+.doc-nav {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 12px 32px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 13px;
+}
+.doc-nav a {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
   background: var(--surface-light);
-  color: var(--fg-2);
   border: 1px solid var(--border);
   border-radius: var(--r-pill);
-  padding: 8px 14px;
-  cursor: pointer;
-  transition: 120ms ease;
+  color: var(--fg-2);
+  font-weight: 500;
 }
-.filter-chip:hover { border-color: var(--blue-300); color: var(--blue-primary); }
-.filter-chip.is-active { background: var(--blue-primary); color: white; border-color: var(--blue-primary); }
-
-.action-btn {
-  font: 600 13px/1 var(--font-latin);
-  background: var(--white);
+.doc-nav a:hover {
+  border-color: var(--blue-300);
   color: var(--blue-primary);
-  border: 1px solid var(--blue-primary);
-  border-radius: var(--r-sm);
-  padding: 10px 16px;
-  cursor: pointer;
-}
-.action-btn:hover { background: var(--blue-50); }
-
-.count {
-  padding: 14px 32px;
-  font: 500 13px/1 var(--font-latin);
-  color: var(--fg-3);
-  background: var(--bg-subtle);
+  text-decoration: none;
 }
 
 /* =========================================================================
-   Grid
+   Main
    ========================================================================= */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-  gap: 24px;
-  padding: 24px 32px 80px;
+.doc-main {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 32px;
 }
-.grid-cell {
+
+.doc-section,
+.phase {
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: var(--r-md);
-  overflow: hidden;
-  cursor: pointer;
-  transition: 160ms ease;
-  display: flex; flex-direction: column;
+  padding: 32px 36px;
+  margin-bottom: 32px;
 }
-.grid-cell:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-3);
-  border-color: var(--blue-200);
-}
-.grid-cell-meta {
-  padding: 14px 16px;
-  border-bottom: 1px solid var(--border);
-  display: flex; flex-direction: column; gap: 2px;
-}
-.grid-phase {
-  font: 600 13px/1.3 var(--font-latin);
+
+.doc-section h2,
+.phase h2 {
+  font: 700 26px/1.2 var(--font-latin);
   color: var(--blue-800);
-}
-.grid-channel {
-  font: 500 11px/1.3 var(--font-latin);
-  color: var(--fg-3);
-}
-.grid-thumb {
-  background: var(--blue-900);
-  padding: 20px;
-  display: flex; align-items: center; justify-content: center;
-  min-height: 180px;
+  margin: 0 0 16px;
 }
 
-/* Each thumb wrapper scales the template to fit a thumbnail. We target
-   max-width ~300px, then scale proportionally. Because the inner .tv has its
-   real pixel dimensions, transform: scale() gives a true-aspect thumbnail. */
-.grid-thumb-li-feed .tv    { transform: scale(0.24); transform-origin: center; }
-.grid-thumb-li-square .tv  { transform: scale(0.27); transform-origin: center; }
-.grid-thumb-x-feed .tv     { transform: scale(0.18); transform-origin: center; }
-.grid-thumb-ig-feed .tv    { transform: scale(0.20); transform-origin: center; }
-.grid-thumb-ig-story .tv   { transform: scale(0.14); transform-origin: center; }
-
-/* =========================================================================
-   Modal (detail view)
-   ========================================================================= */
-#modal {
-  position: fixed; inset: 0; z-index: 100;
-  background: rgba(11, 26, 51, 0.85);
-  display: none; align-items: flex-start; justify-content: center;
-  padding: 40px 24px; overflow-y: auto;
+.doc-section p {
+  font: 400 15px/1.6 var(--font-latin);
+  color: var(--fg-1);
+  margin: 0 0 12px;
 }
-#modal.is-open { display: flex; }
-.modal-inner {
-  background: var(--white);
-  border-radius: var(--r-lg);
-  max-width: 1280px;
+
+/* Definitions, used in the Conventions block */
+.defs {
+  margin: 16px 0 0;
+}
+.defs dt {
+  font: 600 14px/1.3 var(--font-latin);
+  color: var(--blue-primary);
+  margin-top: 14px;
+}
+.defs dd {
+  margin: 4px 0 0;
+  font-size: 15px;
+  color: var(--fg-1);
+}
+
+/* Reference table, used in Variables + Sample */
+.defs-table {
   width: 100%;
-  overflow: hidden;
-  display: grid;
-  grid-template-columns: 1fr 340px;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin-top: 12px;
 }
-.modal-stage {
-  background: var(--blue-900);
-  padding: 40px;
-  display: flex; align-items: center; justify-content: center;
-  min-height: 620px;
-  overflow: auto;
-}
-.modal-stage .tv {
-  transform: scale(0.55);
-  transform-origin: center;
-}
-.modal-side {
-  padding: 28px 24px;
-  overflow-y: auto;
-  max-height: 90vh;
-}
-.modal-side h2 {
-  font: 700 20px/1.3 var(--font-latin);
-  color: var(--blue-800);
-  margin: 0 0 6px;
-}
-.modal-side h3 {
-  font: 600 13px/1.3 var(--font-latin);
+.defs-table th {
+  text-align: left;
+  font: 600 12px/1 var(--font-latin);
   color: var(--fg-3);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin: 20px 0 10px;
+  letter-spacing: 0.08em;
+  padding: 12px 10px;
+  background: var(--surface-light);
+  border-bottom: 1px solid var(--border);
 }
-.modal-meta {
-  font: 400 13px/1.5 var(--font-latin);
+.defs-table td {
+  padding: 12px 10px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.defs-table tr:last-child td { border-bottom: none; }
+.defs-table code { font-size: 13px; }
+
+/* =========================================================================
+   Phase block
+   ========================================================================= */
+.phase-head {
+  margin: 0 0 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+.phase-number {
+  font: 700 12px/1 var(--font-latin);
+  color: var(--gold-600);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  margin: 0 0 8px;
+}
+.phase-head h2 {
+  font: 700 28px/1.15 var(--font-latin);
+  color: var(--blue-800);
+  margin: 0 0 10px;
+}
+.phase-meta {
+  font: 400 14px/1.5 var(--font-latin);
   color: var(--fg-2);
   margin: 4px 0;
 }
-.modal-side dl {
-  display: grid;
-  grid-template-columns: 90px 1fr;
-  gap: 8px 12px;
-  font: 400 13px/1.45 var(--font-latin);
-  color: var(--fg-1);
-  margin: 0;
-}
-.modal-side dt {
-  font-weight: 600;
-  color: var(--fg-3);
-}
-.modal-side dd { margin: 0; }
-.modal-vars {
-  list-style: none; padding: 0; margin: 0;
-  display: flex; flex-wrap: wrap; gap: 6px;
-}
-.modal-vars code {
-  background: var(--gold-50);
-  color: var(--gold-600);
-  padding: 4px 10px;
-  border-radius: var(--r-xs);
-  font: 600 12px/1.2 var(--font-num);
-}
-#modal-close {
-  position: absolute; top: 16px; right: 20px;
-  width: 40px; height: 40px;
-  background: rgba(255,255,255,0.15);
-  color: white; border: none;
-  border-radius: var(--r-pill);
-  font-size: 20px; cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-}
-#modal-close:hover { background: rgba(255,255,255,0.3); }
-
-/* =========================================================================
-   Template base (.tv)
-   All channels share this chassis. Per-channel blocks override dimensions
-   and spacing.
-   ========================================================================= */
-.tv {
-  width: var(--tv-w, 1200px);
-  height: var(--tv-h, 628px);
-  position: relative;
-  background: var(--white);
-  font-family: var(--font-latin);
-  color: var(--fg-1);
-  overflow: hidden;
-  display: grid;
-  flex-shrink: 0;
-}
-
-.tv[dir="rtl"] { font-family: 'Ping AR', var(--font-arabic), var(--font-latin); }
-
-/* Background pattern, subtle dotted hint echoing the parent brand motif. */
-.tv-bg-pattern {
-  position: absolute; inset: 0;
-  background-image:
-    radial-gradient(rgba(7, 67, 155, 0.08) 2px, transparent 2px);
-  background-size: 40px 40px;
-  opacity: 0.35;
-  pointer-events: none;
-}
-
-.tv-header {
-  background: linear-gradient(135deg, var(--blue-800) 0%, var(--blue-primary) 100%);
-  color: var(--white);
-  padding: 36px 48px;
-  position: relative;
-  display: flex; flex-direction: column; gap: 18px;
-  z-index: 1;
-}
-.tv-header::after {
-  content: '';
-  position: absolute; inset: 0;
-  background-image:
-    radial-gradient(rgba(255,255,255,0.08) 2px, transparent 2px);
-  background-size: 28px 28px;
-  opacity: 0.4;
-  pointer-events: none;
-}
-.tv-logo {
-  height: 40px;
-  width: auto;
-  filter: brightness(0) invert(1);
-  position: relative; z-index: 1;
-}
-.tv-kicker {
-  font: 600 13px/1 var(--font-latin);
-  color: var(--gold);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  position: relative; z-index: 1;
-}
-.tv[dir="rtl"] .tv-kicker { letter-spacing: 0; }
-
-.tv-body {
-  padding: 40px 48px;
-  display: flex; flex-direction: column; gap: 20px;
-  justify-content: center;
-  z-index: 1;
-}
-.tv-headline {
-  font: 800 52px/1.08 var(--font-latin);
-  letter-spacing: -0.02em;
+.phase-meta strong {
   color: var(--blue-800);
-  margin: 0;
+  font-weight: 600;
 }
-.tv[dir="rtl"] .tv-headline {
-  font: 800 48px/1.2 'Ping AR', var(--font-arabic);
+
+/* Bilingual columns */
+.lang-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+.lang-col {
+  padding: 0;
+}
+.lang-head {
+  font: 600 12px/1 var(--font-latin);
+  color: var(--fg-3);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  padding-bottom: 10px;
+  margin: 0 0 16px;
+  border-bottom: 1px solid var(--border);
+}
+.lang-col-ar .lang-head,
+.lang-col.lang-ar .lang-head {
+  text-align: right;
+}
+.lang-ar {
+  font-family: var(--font-arabic), var(--font-latin);
+}
+.lang-ar p,
+.lang-ar dd,
+.lang-ar h4 {
+  font-family: var(--font-arabic), var(--font-latin);
+}
+
+/* Individual copy block (standard, long, short) */
+.copy-block {
+  margin-bottom: 22px;
+  padding-bottom: 22px;
+  border-bottom: 1px dashed var(--border);
+}
+.copy-block:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+.copy-block h4 {
+  font: 600 13px/1 var(--font-latin);
+  color: var(--blue-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0 0 12px;
+}
+.lang-ar .copy-block h4 {
+  font-family: var(--font-arabic), var(--font-latin);
   letter-spacing: 0;
 }
-.tv-lede {
-  font: 400 20px/1.45 var(--font-latin);
-  color: var(--fg-2);
+.copy-block p {
+  font: 400 15px/1.6 var(--font-latin);
+  color: var(--fg-1);
   margin: 0;
-  max-width: 90%;
 }
-.tv[dir="rtl"] .tv-lede {
-  font-family: 'Ping AR', var(--font-arabic);
-  font-size: 22px;
-}
-
-.tv-chips {
-  list-style: none; padding: 0; margin: 0;
-  display: flex; flex-wrap: wrap; gap: 10px;
-}
-.tv-chips li {
-  font: 600 15px/1 var(--font-latin);
-  background: var(--blue-50);
-  color: var(--blue-primary);
-  padding: 10px 18px;
-  border-radius: var(--r-pill);
-}
-.tv-chips li:first-child {
-  background: var(--gold);
-  color: var(--blue-800);
-}
-.tv[dir="rtl"] .tv-chips li {
-  font-family: 'Ping AR', var(--font-arabic);
+.lang-ar .copy-block p {
   font-size: 16px;
+  line-height: 1.75;
 }
 
-.tv-cta {
-  display: inline-flex; align-items: center;
-  background: var(--blue-primary);
-  color: var(--white);
-  padding: 16px 28px;
-  border-radius: var(--r-md);
-  font: 700 18px/1 var(--font-latin);
-  align-self: flex-start;
+/* Structured copy (standard form as a definition list) */
+.copy-dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 6px 12px;
+  font: 400 14px/1.5 var(--font-latin);
 }
-.tv[dir="rtl"] .tv-cta {
-  font-family: 'Ping AR', var(--font-arabic);
-  align-self: flex-end;
+.lang-ar .copy-dl {
+  grid-template-columns: 80px 1fr;
+  font-size: 15px;
+  line-height: 1.7;
+  font-family: var(--font-arabic), var(--font-latin);
 }
-
-.tv-footer {
-  padding: 18px 48px;
-  display: flex; justify-content: space-between; align-items: center;
-  font: 500 12px/1 var(--font-latin);
+.copy-dl dt {
+  font-weight: 600;
   color: var(--fg-3);
-  border-top: 1px solid var(--border);
-  background: var(--white);
-  z-index: 1;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  padding-top: 2px;
 }
-.tv[dir="rtl"] .tv-footer {
-  font-family: 'Ping AR', var(--font-arabic);
+.lang-ar .copy-dl dt {
+  text-transform: none;
+  letter-spacing: 0;
   font-size: 13px;
 }
-
-/* Variable-slot styling: gold so reviewer sees dynamic parts instantly. */
-.tv-var {
-  color: var(--gold-600);
-  font-weight: 700;
-  background: var(--gold-50);
-  padding: 1px 6px;
-  border-radius: 3px;
+.copy-dl dd {
+  margin: 0;
+  color: var(--fg-1);
 }
 
 /* =========================================================================
-   Per-channel layouts
-   Each variant has specific grid proportions, type sizes, and padding so the
-   composition works at its native aspect ratio.
+   Production notes
    ========================================================================= */
-
-/* LinkedIn feed, 1200 × 628 (1.91:1) — landscape wide */
-.tv-li-feed {
-  grid-template-rows: auto 1fr auto;
+.prod-list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
-.tv-li-feed .tv-headline { font-size: 48px; }
-.tv-li-feed .tv-lede { font-size: 18px; }
-.tv-li-feed[dir="rtl"] .tv-headline { font-size: 42px; }
-
-/* LinkedIn square, 1080 × 1080 (1:1) */
-.tv-li-square {
-  grid-template-rows: auto 1fr auto;
+.prod-list li {
+  padding: 14px 18px;
+  background: var(--surface-light);
+  border-left: 3px solid var(--blue-primary);
+  border-radius: var(--r-sm);
+  font: 400 14px/1.55 var(--font-latin);
 }
-.tv-li-square .tv-header { padding: 48px 56px 36px; }
-.tv-li-square .tv-body { padding: 48px 56px; gap: 28px; }
-.tv-li-square .tv-headline { font-size: 68px; }
-.tv-li-square .tv-lede { font-size: 24px; }
-.tv-li-square[dir="rtl"] .tv-headline { font-size: 58px; }
-
-/* X (Twitter) feed, 1600 × 900 (1.78:1) — landscape widest */
-.tv-x-feed {
-  grid-template-rows: auto 1fr auto;
+.prod-list li strong {
+  color: var(--blue-800);
+  font-weight: 600;
 }
-.tv-x-feed .tv-header { padding: 44px 64px; }
-.tv-x-feed .tv-body { padding: 48px 64px; }
-.tv-x-feed .tv-headline { font-size: 64px; }
-.tv-x-feed .tv-lede { font-size: 24px; }
-.tv-x-feed[dir="rtl"] .tv-headline { font-size: 54px; }
-
-/* Instagram feed, 1080 × 1440 (4:5 portrait) */
-.tv-ig-feed {
-  grid-template-rows: auto 1fr auto;
-}
-.tv-ig-feed .tv-header { padding: 56px 56px 40px; }
-.tv-ig-feed .tv-body { padding: 56px 56px; gap: 28px; justify-content: flex-start; }
-.tv-ig-feed .tv-headline { font-size: 72px; }
-.tv-ig-feed .tv-lede { font-size: 24px; }
-.tv-ig-feed[dir="rtl"] .tv-headline { font-size: 62px; }
-
-/* Instagram story, 1080 × 1920 (9:16 portrait) — tallest */
-.tv-ig-story {
-  grid-template-rows: auto 1fr auto;
-}
-.tv-ig-story .tv-header { padding: 72px 56px 52px; }
-.tv-ig-story .tv-body {
-  padding: 64px 56px;
-  gap: 40px;
-  justify-content: center;
-}
-.tv-ig-story .tv-headline { font-size: 86px; }
-.tv-ig-story .tv-lede { font-size: 28px; }
-.tv-ig-story .tv-cta { font-size: 22px; padding: 20px 36px; }
-.tv-ig-story .tv-chips li { font-size: 18px; padding: 14px 22px; }
-.tv-ig-story[dir="rtl"] .tv-headline { font-size: 74px; }
 
 /* =========================================================================
-   Responsive showcase
+   Footer
    ========================================================================= */
-@media (max-width: 900px) {
-  .modal-inner { grid-template-columns: 1fr; }
-  .modal-stage { min-height: 400px; }
-  .modal-stage .tv { transform: scale(0.30); }
-  .controls-actions { margin-left: 0; width: 100%; }
+.doc-footer {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 24px 32px 60px;
+  font: 400 13px/1.4 var(--font-latin);
+  color: var(--fg-3);
+}
+
+/* =========================================================================
+   Responsive
+   ========================================================================= */
+@media (max-width: 800px) {
+  .doc-header-inner { padding: 32px 20px 16px; }
+  .doc-header h1 { font-size: 30px; }
+  .doc-nav { padding: 12px 20px 20px; }
+  .doc-main { padding: 16px; }
+  .doc-section, .phase { padding: 24px 20px; }
+  .lang-grid { grid-template-columns: 1fr; }
+  .copy-dl { grid-template-columns: 80px 1fr; font-size: 13px; }
+}
+
+/* =========================================================================
+   Print (for clean PDF exports)
+   ========================================================================= */
+@media print {
+  body { background: white; }
+  .doc-nav, .doc-download, .doc-footer { display: none; }
+  .doc-section, .phase { border: none; page-break-inside: avoid; padding: 16px 0; margin-bottom: 16px; }
+  .lang-grid { gap: 20px; }
 }
