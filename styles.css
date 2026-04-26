@@ -307,6 +307,11 @@ p, li, .hero-lead, .section-lede, .faq-a, .risk-card p, .why-body, .gov-body { t
 }
 .trust-icon svg { width: 22px; height: 22px; }
 .trust-icon-gold { background: var(--gold-50); color: var(--gold-600); }
+/* SAMA mark: use logo image when present, fall back to inline SVG shield */
+.trust-icon-sama { background: var(--white); border: 1px solid var(--border); padding: 4px; }
+.trust-icon-sama .sama-mark { width: 100%; height: 100%; object-fit: contain; display: block; }
+.trust-icon-sama:not(.has-mark) { background: var(--blue-50); border: 0; padding: 0; }
+.trust-icon-sama.has-mark .sama-fallback { display: none; }
 .trust-title { font: var(--fw-semibold) var(--fs-body-sm)/1.3 var(--font-latin); color: var(--blue-800); }
 .trust-sub { font: var(--fw-regular) 12px/1.4 var(--font-latin); color: var(--fg-3); margin-top: 2px; }
 
