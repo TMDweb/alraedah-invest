@@ -146,6 +146,7 @@
     const target = document.querySelector(href);
     if (!target) return;
     e.preventDefault();
+    if (target.tagName === 'DETAILS' && !target.open) target.open = true;
     const headerH = document.querySelector('.site-header').offsetHeight + 8;
     const top = target.getBoundingClientRect().top + window.pageYOffset - headerH;
     window.scrollTo({ top, behavior: 'smooth' });
