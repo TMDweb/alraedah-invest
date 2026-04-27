@@ -652,11 +652,6 @@ p, li, .hero-lead, .section-lede, .faq-a, .risk-card p, .why-body { text-wrap: p
   color: var(--fg-2);
   margin: 0;
 }
-.alt-foot {
-  font: var(--fw-regular) var(--fs-disclosure)/1.5 var(--font-latin);
-  color: var(--fg-3);
-  margin: 0;
-}
 
 /* Payment story, simple first explanation */
 .payment-story {
