@@ -480,6 +480,28 @@ p, li, .hero-lead, .section-lede, .faq-a, .risk-card p, .why-body { text-wrap: p
   color: var(--fg-3); margin: 0 0 var(--space-9);
 }
 
+/* Unified shell wrapping the calculator + payment story as one container */
+.returns-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-2);
+  margin-bottom: var(--space-7);
+  overflow: hidden;
+}
+.returns-card > .tool-primary {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  margin-bottom: 0;
+  box-shadow: none;
+}
+.returns-card > .payment-story {
+  margin: 0;
+  border-radius: 0;
+  border-top: 1px solid var(--border);
+}
+
 /* Primary tool (calculator) */
 .tool-primary {
   background: var(--white);
