@@ -10,18 +10,23 @@
   let playing = false;
   let timer = null;
 
+  // Simulator uses a fixed illustrative amount so the gap between the three
+  // outcomes is visually obvious. Decoupled from the global slider.
+  const SIM_AMOUNT = 50000;
+
   function render(state, currentMonth, final) {
     const { fmtSAR } = window.AInvest.fmt;
     const series = window.AInvest.math.monthlySeries(
-      state.amount, state.effectiveRate, state.bankFlatRate, state.tenorMonths
+      SIM_AMOUNT, state.effectiveRate, state.bankFlatRate, state.tenorMonths
     );
     const total = state.tenorMonths;
 
     // Bank scene
     const bankFinalVal = series[total - 1].bank;
     const bankVal = currentMonth >= total ? bankFinalVal : 0;
-    setPct('sim-bank-fill', (bankVal / bankFinalVal) * 100);
-    setText('sim-bank-cap', fmtSAR(bankVal));
+    const bankPct = (bankVal / bankFinalVal) * 100;
+    setPct('sim-bank-fill', bankPct);
+    setCap('sim-bank-cap', fmtSAR(bankVal), bankPct);
     setText('sim-bank-month', String(currentMonth));
 
     // Alraedah no-reinvest scene (pocket)
@@ -32,8 +37,9 @@
     // Alraedah reinvest scene
     const reinvFinal = series[total - 1].reinv;
     const reinvVal = currentMonth === 0 ? 0 : series[Math.max(0, currentMonth - 1)].reinv;
-    setPct('sim-reinv-fill', (reinvVal / reinvFinal) * 100);
-    setText('sim-reinv-cap', fmtSAR(reinvVal));
+    const reinvPct = (reinvVal / reinvFinal) * 100;
+    setPct('sim-reinv-fill', reinvPct);
+    setCap('sim-reinv-cap', fmtSAR(reinvVal), reinvPct);
     setText('sim-reinv-month', String(currentMonth));
 
     // Outcome cards shown when final
@@ -56,6 +62,14 @@
   function setPct(id, pct) {
     const el = document.getElementById(id);
     if (el) el.style.height = Math.max(0, Math.min(100, pct)).toFixed(1) + '%';
+  }
+  function setCap(id, text, pct) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.textContent = text;
+    // Cap sits ~6% down the bar; once the fill rises above ~12%, the cap
+    // text is over the dark fill and needs to flip to white for contrast.
+    el.classList.toggle('is-covered', pct > 12);
   }
   function setText(id, val) {
     const el = document.getElementById(id);

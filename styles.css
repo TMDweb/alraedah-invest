@@ -1166,7 +1166,9 @@ p, li, .hero-lead, .section-lede, .faq-a, .risk-card p, .why-body { text-wrap: p
   position: absolute; top: 8px; left: 10px;
   font: var(--fw-bold) var(--fs-num-sm)/1 var(--font-num);
   color: var(--blue-800); font-feature-settings: 'tnum' 1;
+  transition: color 200ms var(--motion-ease);
 }
+.sim-bar:not(.sim-bar-gold) .sim-cap.is-covered { color: var(--white); }
 .sim-pocket {
   background: var(--blue-primary);
   color: var(--white);
@@ -1183,6 +1185,7 @@ p, li, .hero-lead, .section-lede, .faq-a, .risk-card p, .why-body { text-wrap: p
   display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4);
   margin-top: var(--space-6); padding-top: var(--space-6); border-top: 1px solid var(--border);
 }
+.sim-outcomes[hidden] { display: none; }
 .outcome-card {
   background: var(--surface-light);
   border: 1px solid var(--border);
