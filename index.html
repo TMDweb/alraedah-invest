@@ -861,6 +861,228 @@
 </section>
 
 <!-- ============================================================
+     MOTION PANEL — three isometric scenes telling the velocity
+     thesis ahead of the FAQ wall. Faux-3D SVG, liquid glass.
+     ============================================================ -->
+<section class="section motion-panel-section">
+  <div class="container">
+    <p class="eyebrow">Your money, in motion</p>
+    <h2 class="section-title motion-panel-title">From sitting still to working monthly.</h2>
+    <div class="motion-panel">
+
+      <article class="motion-card glass-tile">
+        <div class="motion-scene" aria-hidden="true">
+          <svg viewBox="0 0 280 200" xmlns="http://www.w3.org/2000/svg" fill="none">
+            <defs>
+              <linearGradient id="mp1-deskTop" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#E9F0FB"/>
+                <stop offset="1" stop-color="#C8D7EC"/>
+              </linearGradient>
+              <linearGradient id="mp1-deskSide" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#9FB4D2"/>
+                <stop offset="1" stop-color="#6F86A7"/>
+              </linearGradient>
+              <linearGradient id="mp1-laptopTop" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#1F4188"/>
+                <stop offset="1" stop-color="#0F265A"/>
+              </linearGradient>
+              <linearGradient id="mp1-screen" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#3A6FCC"/>
+                <stop offset="1" stop-color="#1F4188"/>
+              </linearGradient>
+              <radialGradient id="mp1-coin" cx="0.3" cy="0.3" r="0.8">
+                <stop offset="0" stop-color="#FFE89A"/>
+                <stop offset="0.6" stop-color="#F1C31B"/>
+                <stop offset="1" stop-color="#B8901A"/>
+              </radialGradient>
+              <filter id="mp1-shadow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+                <feOffset dy="4"/>
+                <feComponentTransfer><feFuncA type="linear" slope="0.25"/></feComponentTransfer>
+                <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+            <!-- Floor shadow under desk -->
+            <ellipse cx="140" cy="178" rx="100" ry="8" fill="#0F265A" opacity="0.12"/>
+            <!-- Isometric desk surface -->
+            <g filter="url(#mp1-shadow)">
+              <path d="M50 130 L140 95 L230 130 L140 165 Z" fill="url(#mp1-deskTop)"/>
+              <path d="M50 130 L50 145 L140 180 L140 165 Z" fill="url(#mp1-deskSide)" opacity="0.85"/>
+              <path d="M230 130 L230 145 L140 180 L140 165 Z" fill="url(#mp1-deskSide)"/>
+            </g>
+            <!-- Laptop base (isometric) -->
+            <g>
+              <path d="M100 121 L160 99 L200 113 L140 135 Z" fill="url(#mp1-laptopTop)"/>
+              <path d="M100 121 L100 124 L140 138 L140 135 Z" fill="#0A1A40"/>
+              <path d="M200 113 L200 116 L140 138 L140 135 Z" fill="#0A1A40"/>
+            </g>
+            <!-- Laptop screen (tilted up) -->
+            <g>
+              <path d="M105 119 L155 100 L195 113 L195 75 L155 62 L105 81 Z" fill="url(#mp1-screen)"/>
+              <path d="M115 102 L155 87 L185 97 L185 75 L155 65 L115 80 Z" fill="#0F265A" opacity="0.6"/>
+              <!-- "Invested" check on screen -->
+              <circle cx="155" cy="84" r="8" fill="#F1C31B"/>
+              <path d="M152 84 L154 87 L159 81" stroke="#0F265A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </g>
+            <!-- Floating coin entering the laptop, with soft shadow -->
+            <ellipse cx="232" cy="78" rx="10" ry="3" fill="#0F265A" opacity="0.18"/>
+            <g class="mp-coin">
+              <circle cx="232" cy="55" r="14" fill="url(#mp1-coin)"/>
+              <ellipse cx="232" cy="51" rx="11" ry="9" fill="#FFE89A" opacity="0.6"/>
+              <text x="232" y="60" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#7A5C0A" text-anchor="middle">SAR</text>
+            </g>
+          </svg>
+        </div>
+        <h3 class="motion-card-title">You invest once</h3>
+        <p class="motion-card-body">From SAR 1,000. One transaction, one opportunity, one decision.</p>
+      </article>
+
+      <article class="motion-card glass-tile">
+        <div class="motion-scene" aria-hidden="true">
+          <svg viewBox="0 0 280 200" xmlns="http://www.w3.org/2000/svg" fill="none">
+            <defs>
+              <linearGradient id="mp2-calTop" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#FFFFFF"/>
+                <stop offset="1" stop-color="#E1ECFB"/>
+              </linearGradient>
+              <linearGradient id="mp2-calSide" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#A9BDDB"/>
+                <stop offset="1" stop-color="#7B92B6"/>
+              </linearGradient>
+              <radialGradient id="mp2-coin" cx="0.3" cy="0.3" r="0.8">
+                <stop offset="0" stop-color="#FFE89A"/>
+                <stop offset="0.6" stop-color="#F1C31B"/>
+                <stop offset="1" stop-color="#B8901A"/>
+              </radialGradient>
+              <filter id="mp2-shadow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+                <feOffset dy="6"/>
+                <feComponentTransfer><feFuncA type="linear" slope="0.22"/></feComponentTransfer>
+                <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+            <ellipse cx="140" cy="180" rx="105" ry="9" fill="#0F265A" opacity="0.12"/>
+            <!-- Isometric calendar block -->
+            <g filter="url(#mp2-shadow)">
+              <!-- Top face with month grid -->
+              <path d="M55 105 L140 70 L225 105 L140 140 Z" fill="url(#mp2-calTop)"/>
+              <!-- Front face -->
+              <path d="M55 105 L55 145 L140 180 L140 140 Z" fill="url(#mp2-calSide)" opacity="0.9"/>
+              <!-- Right face -->
+              <path d="M225 105 L225 145 L140 180 L140 140 Z" fill="url(#mp2-calSide)"/>
+              <!-- Front-face dim mark (calendar binding) -->
+              <path d="M55 105 L140 70 L140 78 L55 113 Z" fill="#F1C31B" opacity="0.85"/>
+              <path d="M225 105 L140 70 L140 78 L225 113 Z" fill="#D4A615" opacity="0.85"/>
+            </g>
+            <!-- 12 month dots arranged as 4x3 grid on the top face -->
+            <g class="mp2-grid">
+              <!-- Row 1 (already paid: 4 ticks) -->
+              <circle cx="98" cy="98" r="4" fill="#F1C31B"/>
+              <circle cx="118" cy="106" r="4" fill="#F1C31B"/>
+              <circle cx="138" cy="114" r="4" fill="#F1C31B"/>
+              <circle cx="158" cy="122" r="4" fill="#F1C31B"/>
+              <!-- Row 2 (in progress: lighter) -->
+              <circle cx="110" cy="92" r="3.5" fill="#F1C31B" opacity="0.7"/>
+              <circle cx="130" cy="100" r="3.5" fill="#F1C31B" opacity="0.55"/>
+              <circle cx="150" cy="108" r="3.5" fill="#F1C31B" opacity="0.4"/>
+              <circle cx="170" cy="116" r="3.5" fill="#F1C31B" opacity="0.3"/>
+              <!-- Row 3 (future: outline only) -->
+              <circle cx="122" cy="86" r="3" fill="none" stroke="#F1C31B" stroke-width="1.2" opacity="0.5"/>
+              <circle cx="142" cy="94" r="3" fill="none" stroke="#F1C31B" stroke-width="1.2" opacity="0.5"/>
+              <circle cx="162" cy="102" r="3" fill="none" stroke="#F1C31B" stroke-width="1.2" opacity="0.5"/>
+              <circle cx="182" cy="110" r="3" fill="none" stroke="#F1C31B" stroke-width="1.2" opacity="0.5"/>
+            </g>
+            <!-- Floating coins above (representing arriving payments) -->
+            <g class="mp2-coin-stack">
+              <ellipse cx="200" cy="88" rx="8" ry="2.5" fill="#0F265A" opacity="0.18"/>
+              <circle cx="200" cy="68" r="11" fill="url(#mp2-coin)"/>
+              <ellipse cx="200" cy="64" rx="8.5" ry="6.5" fill="#FFE89A" opacity="0.5"/>
+              <ellipse cx="218" cy="55" rx="6" ry="2" fill="#0F265A" opacity="0.12"/>
+              <circle cx="218" cy="42" r="8" fill="url(#mp2-coin)"/>
+            </g>
+            <!-- Subtle SAR label on lead coin -->
+            <text x="200" y="72" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#7A5C0A" text-anchor="middle">SAR</text>
+          </svg>
+        </div>
+        <h3 class="motion-card-title">Returns arrive every month</h3>
+        <p class="motion-card-body">Your capital plus target return, paid back in monthly distributions.</p>
+      </article>
+
+      <article class="motion-card glass-tile">
+        <div class="motion-scene" aria-hidden="true">
+          <svg viewBox="0 0 280 200" xmlns="http://www.w3.org/2000/svg" fill="none">
+            <defs>
+              <linearGradient id="mp3-safeFront" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#2C549F"/>
+                <stop offset="1" stop-color="#0F265A"/>
+              </linearGradient>
+              <linearGradient id="mp3-safeTop" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#3A6FCC"/>
+                <stop offset="1" stop-color="#1F4188"/>
+              </linearGradient>
+              <linearGradient id="mp3-safeSide" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#1F4188"/>
+                <stop offset="1" stop-color="#0A1A40"/>
+              </linearGradient>
+              <radialGradient id="mp3-glow" cx="0.5" cy="0.5" r="0.8">
+                <stop offset="0" stop-color="#FFE89A"/>
+                <stop offset="0.5" stop-color="#F1C31B" stop-opacity="0.6"/>
+                <stop offset="1" stop-color="#F1C31B" stop-opacity="0"/>
+              </radialGradient>
+              <radialGradient id="mp3-coin" cx="0.3" cy="0.3" r="0.8">
+                <stop offset="0" stop-color="#FFE89A"/>
+                <stop offset="0.6" stop-color="#F1C31B"/>
+                <stop offset="1" stop-color="#B8901A"/>
+              </radialGradient>
+              <filter id="mp3-shadow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur in="SourceAlpha" stdDeviation="3.5"/>
+                <feOffset dy="5"/>
+                <feComponentTransfer><feFuncA type="linear" slope="0.28"/></feComponentTransfer>
+                <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+            <ellipse cx="140" cy="178" rx="100" ry="8" fill="#0F265A" opacity="0.14"/>
+            <!-- Soft glow behind safe -->
+            <ellipse cx="100" cy="110" rx="80" ry="60" fill="url(#mp3-glow)" opacity="0.6"/>
+            <!-- Isometric safe (door open, glow inside) -->
+            <g filter="url(#mp3-shadow)">
+              <!-- Top face -->
+              <path d="M55 95 L120 65 L185 95 L120 125 Z" fill="url(#mp3-safeTop)"/>
+              <!-- Front face -->
+              <path d="M55 95 L55 155 L120 185 L120 125 Z" fill="url(#mp3-safeFront)"/>
+              <!-- Right face -->
+              <path d="M185 95 L185 155 L120 185 L120 125 Z" fill="url(#mp3-safeSide)"/>
+              <!-- Inner cavity glow on front face -->
+              <path d="M68 115 L68 145 L107 163 L107 133 Z" fill="url(#mp3-glow)" opacity="0.85"/>
+              <!-- Door (slightly open, tilted) -->
+              <path d="M68 115 L78 110 L78 140 L68 145 Z" fill="#0A1A40"/>
+              <path d="M78 110 L107 124 L107 133 L78 140 Z" fill="url(#mp3-safeFront)" opacity="0.9"/>
+              <!-- Door handle -->
+              <circle cx="92" cy="124" r="2.5" fill="#F1C31B"/>
+            </g>
+            <!-- Coins flowing out of the safe to the right -->
+            <g class="mp3-flow">
+              <ellipse cx="160" cy="135" rx="8" ry="2.5" fill="#0F265A" opacity="0.15"/>
+              <circle cx="160" cy="118" r="9" fill="url(#mp3-coin)"/>
+              <ellipse cx="160" cy="115" rx="6.5" ry="5" fill="#FFE89A" opacity="0.55"/>
+              <ellipse cx="195" cy="115" rx="7" ry="2" fill="#0F265A" opacity="0.13"/>
+              <circle cx="195" cy="100" r="7.5" fill="url(#mp3-coin)"/>
+              <ellipse cx="225" cy="98" rx="6" ry="1.8" fill="#0F265A" opacity="0.1"/>
+              <circle cx="225" cy="85" r="6" fill="url(#mp3-coin)"/>
+              <circle cx="245" cy="72" r="4" fill="url(#mp3-coin)"/>
+              <circle cx="258" cy="62" r="2.8" fill="url(#mp3-coin)" opacity="0.7"/>
+            </g>
+          </svg>
+        </div>
+        <h3 class="motion-card-title">Cash, or compound it</h3>
+        <p class="motion-card-body">Take each payout as cash, or reinvest it. Either way, your money is no longer locked.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
      SECTION 8, FAQ (9 questions from foundational doc, compliance-adapted)
      ============================================================ -->
 <section class="section" id="faq">

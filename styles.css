@@ -1602,6 +1602,52 @@ details[open] .faq-q::after { content: '−'; }
   0%, 100% { transform: translateY(0); }
   50%      { transform: translateY(-3px); }
 }
+/* ============================================================
+   MOTION PANEL — three faux-3D scene cards before the FAQ.
+   Each card stacks: scene illustration on top, copy beneath.
+   Glass tile (light) backdrop, isometric SVG illustrations.
+   ============================================================ */
+.motion-panel-section {
+  background: linear-gradient(180deg, var(--surface-light) 0%, var(--white) 100%);
+}
+.motion-panel-title { text-align: center; max-width: 720px; margin-left: auto; margin-right: auto; }
+.motion-panel-section .eyebrow { text-align: center; }
+.motion-panel {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+}
+.motion-card {
+  padding: var(--space-6) var(--space-6) var(--space-7);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.motion-scene {
+  width: 100%;
+  margin: 0 auto var(--space-5);
+  border-radius: var(--r-md);
+  overflow: hidden;
+  /* Subtle inset shadow on the scene "stage" for depth */
+  background: linear-gradient(180deg, rgba(241,195,27,0.06) 0%, rgba(31,65,136,0.04) 100%);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.4);
+}
+.motion-scene svg { display: block; width: 100%; height: auto; }
+.motion-card-title {
+  font: var(--fw-semibold) var(--fs-heading-sm)/1.3 var(--font-latin);
+  color: var(--blue-800);
+  margin: 0 0 var(--space-2);
+}
+.motion-card-body {
+  font: var(--fw-regular) var(--fs-body-sm)/1.55 var(--font-latin);
+  color: var(--fg-2);
+  margin: 0;
+}
+@media (max-width: 1024px) {
+  .motion-panel { grid-template-columns: 1fr; gap: var(--space-5); }
+}
+
 /* Reduced motion: kill all looping animations. The first-paint
    entrance animations are already handled in the earlier @media block. */
 @media (prefers-reduced-motion: reduce) {
