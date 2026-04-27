@@ -317,13 +317,16 @@ p, li, .hero-lead, .section-lede, .faq-a, .risk-card p, .why-body { text-wrap: p
 }
 .step-art {
   width: 100%;
-  aspect-ratio: 1 / 1;
-  max-width: 140px;
+  aspect-ratio: 280 / 200;
   margin: 0 0 var(--space-5) 0;
-  background: var(--white);
+  background: linear-gradient(180deg, rgba(241,195,27,0.06) 0%, rgba(31,65,136,0.04) 100%);
+  border: 1px solid rgba(255,255,255,0.5);
   border-radius: var(--r-md);
-  padding: 10px;
-  box-shadow: var(--shadow-1);
+  padding: var(--space-3);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.7),
+    0 6px 24px rgba(15, 38, 87, 0.08);
+  overflow: hidden;
 }
 .step-art svg { width: 100%; height: 100%; display: block; }
 .step-num {
