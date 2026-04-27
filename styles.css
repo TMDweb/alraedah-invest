@@ -1417,6 +1417,66 @@ details[open] .faq-q::after { content: '−'; }
 
 /* ---- INSTITUTIONS ------------------------------------------------------- */
 .inst-container { max-width: var(--container-md); text-align: left; }
+.inst-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-9);
+  align-items: center;
+}
+.inst-copy { display: flex; flex-direction: column; }
+.inst-copy .section-title { margin-bottom: var(--space-4); }
+.inst-copy .section-lede { margin: 0 0 var(--space-6); }
+.inst-points {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-7);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.inst-points li {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: var(--space-4);
+  align-items: center;
+  padding: var(--space-3) var(--space-4);
+  background: rgba(255,255,255,0.6);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.inst-point-num {
+  font: var(--fw-bold) 18px/1 var(--font-num);
+  color: var(--blue-primary);
+  text-align: center;
+  letter-spacing: -0.01em;
+}
+.inst-point-text {
+  font: var(--fw-regular) var(--fs-body-sm)/1.4 var(--font-latin);
+  color: var(--fg-2);
+}
+.inst-copy .btn { align-self: flex-start; }
+.inst-visual {
+  border-radius: var(--r-md);
+  background: linear-gradient(180deg, rgba(241,195,27,0.08) 0%, rgba(31,65,136,0.04) 100%);
+  border: 1px solid rgba(255,255,255,0.5);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.7),
+    0 8px 32px rgba(15, 38, 87, 0.10);
+  padding: var(--space-5);
+  overflow: hidden;
+}
+.inst-visual svg { display: block; width: 100%; height: auto; }
+@media (max-width: 1024px) {
+  .inst-grid { grid-template-columns: 1fr; gap: var(--space-7); }
+  .inst-visual { max-width: 480px; margin: 0 auto; }
+}
+@media (max-width: 640px) {
+  .inst-points li { grid-template-columns: 70px 1fr; gap: var(--space-3); padding: var(--space-2) var(--space-3); }
+  .inst-point-num { font-size: 16px; }
+  .inst-copy .btn { align-self: stretch; }
+}
 
 /* ---- NEWSLETTER (section-dark) ------------------------------------------ */
 .nl-container { max-width: var(--container-md); text-align: center; }
@@ -1474,7 +1534,29 @@ details[open] .faq-q::after { content: '−'; }
   .hero-ctas .btn { width: 100%; }
   .state-toolbar .row { flex-direction: column; align-items: flex-start; }
   .trust-row { grid-template-columns: 1fr; }
-  .steps, .opps-grid, .compare-summary, .calc-results, .sim-wrap, .sim-outcomes, .why-grid, .footer-cols { grid-template-columns: 1fr; }
+  .steps, .opps-grid, .compare-summary, .calc-results, .why-grid, .footer-cols { grid-template-columns: 1fr; }
+  /* Simulator: keep all 3 scenes side-by-side on mobile and compact heights so
+     the whole panel fits inside one mobile viewport (~640px target on 812h). */
+  .sim-wrap { grid-template-columns: repeat(3, 1fr); gap: var(--space-3); margin: var(--space-4) 0 var(--space-4); }
+  .sim-scene { padding: var(--space-3); min-height: 0; gap: var(--space-2); }
+  .sim-label { font-size: 10px; line-height: 1.2; }
+  .sim-bar { height: 70px; }
+  .sim-cap { font-size: 11px; top: 4px; left: 5px; }
+  .sim-pocket { padding: var(--space-3); }
+  .pocket-label { font-size: 9px; }
+  .pocket-num { font-size: 16px; }
+  .sim-month { font-size: 10px; }
+  .sim-controls { gap: var(--space-2); margin-top: var(--space-3); }
+  .sim-controls .btn { padding: 9px 12px; font-size: 12px; flex: 1; }
+  /* Outcomes also packed 3-up on mobile so they don't add another tall scroll */
+  .sim-outcomes { grid-template-columns: repeat(3, 1fr); gap: var(--space-2); margin-top: var(--space-4); padding-top: var(--space-4); }
+  .outcome-card { padding: var(--space-3); }
+  .outcome-label { font-size: 9px; margin-bottom: var(--space-1); }
+  .outcome-num { font-size: 14px; }
+  /* Tool panel head: tighter to save vertical space on mobile */
+  .tool-panel .tool-head { margin-bottom: var(--space-4); }
+  .tool-panel .tool-title { font-size: 18px; line-height: 1.2; }
+  .tool-panel .tool-sub { font-size: 13px; line-height: 1.4; }
   .tools-tabs { grid-template-columns: 1fr; }
   .rule-row { grid-template-columns: 1fr; gap: var(--space-2); }
   .payment-story, .tool-primary, .tool-panel, .empty-state, .between-state, .risk-mgmt { padding: var(--space-6); }

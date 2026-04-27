@@ -11,6 +11,9 @@
   <meta name="googlebot" content="noindex, nofollow">
 
   <link rel="icon" type="image/png" href="assets/logos/alraedah-invest-official.png">
+  <!-- Mobile browser chrome matches brand navy -->
+  <meta name="theme-color" content="#0F265A">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <link rel="stylesheet" href="tokens.css">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -229,7 +232,7 @@
       </span>
       <div>
         <div class="trust-title">10+ years in investment</div>
-        <div class="trust-sub">Alraedah's underwriting pedigree</div>
+        <div class="trust-sub">Alraedah Group's SME-finance track record</div>
       </div>
     </div>
   </div>
@@ -248,21 +251,17 @@
         <div class="step-art step-art-1" aria-hidden="true">
           <svg viewBox="0 0 280 200" xmlns="http://www.w3.org/2000/svg" fill="none">
             <defs>
-              <linearGradient id="s1-phoneFront" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#FFFFFF"/>
-                <stop offset="1" stop-color="#E8EFFA"/>
-              </linearGradient>
-              <linearGradient id="s1-phoneSide" x1="0" y1="0" x2="0" y2="1">
+              <linearGradient id="s1-phoneBody" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0" stop-color="#1F4188"/>
                 <stop offset="1" stop-color="#0A1A40"/>
               </linearGradient>
               <linearGradient id="s1-screen" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0" stop-color="#3A6FCC"/>
-                <stop offset="0.4" stop-color="#1F4188"/>
+                <stop offset="0.5" stop-color="#1F4188"/>
                 <stop offset="1" stop-color="#0F265A"/>
               </linearGradient>
               <radialGradient id="s1-glow" cx="0.5" cy="0.5" r="0.7">
-                <stop offset="0" stop-color="#F1C31B" stop-opacity="0.45"/>
+                <stop offset="0" stop-color="#F1C31B" stop-opacity="0.40"/>
                 <stop offset="1" stop-color="#F1C31B" stop-opacity="0"/>
               </radialGradient>
               <radialGradient id="s1-checkBadge" cx="0.3" cy="0.3" r="0.8">
@@ -277,30 +276,43 @@
                 <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
               </filter>
             </defs>
-            <ellipse cx="140" cy="178" rx="80" ry="7" fill="#0F265A" opacity="0.14"/>
+            <ellipse cx="140" cy="184" rx="60" ry="6" fill="#0F265A" opacity="0.14"/>
             <ellipse cx="140" cy="100" rx="100" ry="70" fill="url(#s1-glow)"/>
-            <!-- Isometric phone (tilted 3/4 view) -->
+            <!-- Phone, head-on (no skew, all text inside the screen reads cleanly) -->
             <g filter="url(#s1-shadow)">
-              <!-- Phone body, front face -->
-              <path d="M100 50 L160 30 L180 38 L180 158 L120 178 L100 170 Z" fill="url(#s1-phoneSide)"/>
-              <!-- Phone bezel/screen surface -->
-              <path d="M108 58 L160 40 L172 45 L172 153 L120 171 L108 166 Z" fill="url(#s1-phoneFront)"/>
-              <!-- Phone screen content -->
-              <path d="M114 66 L158 50 L166 53 L166 145 L122 161 L114 158 Z" fill="url(#s1-screen)"/>
-              <!-- Top status bar -->
-              <rect x="118" y="68" width="42" height="2" rx="1" fill="#FFFFFF" opacity="0.4" transform="skewY(-18)"/>
-              <!-- Nafath header text -->
-              <text x="140" y="82" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#FFFFFF" text-anchor="middle" transform="skewY(-18) translate(0 25)" opacity="0.95">Nafath</text>
-              <!-- Verified card -->
-              <rect x="120" y="100" width="40" height="20" rx="3" fill="#FFFFFF" opacity="0.18" transform="skewY(-18) translate(0 33)"/>
-              <circle cx="128" cy="113" r="5" fill="#F1C31B" transform="skewY(-18) translate(0 33)"/>
-              <path d="M125 113 L127 115 L131 110" stroke="#0F265A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" transform="skewY(-18) translate(0 33)"/>
-              <rect x="138" y="108" width="20" height="2" rx="1" fill="#FFFFFF" opacity="0.7" transform="skewY(-18) translate(0 33)"/>
-              <rect x="138" y="113" width="14" height="2" rx="1" fill="#FFFFFF" opacity="0.45" transform="skewY(-18) translate(0 33)"/>
-              <!-- Bottom button -->
-              <rect x="120" y="138" width="40" height="8" rx="4" fill="#F1C31B" transform="skewY(-18) translate(0 38)"/>
+              <!-- Phone body -->
+              <rect x="106" y="22" width="68" height="156" rx="10" fill="url(#s1-phoneBody)"/>
+              <!-- Bezel highlight (top inset) -->
+              <rect x="106" y="22" width="68" height="156" rx="10" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+              <!-- Notch -->
+              <rect x="128" y="26" width="24" height="3" rx="1.5" fill="#000" opacity="0.6"/>
+              <!-- Screen -->
+              <rect x="112" y="34" width="56" height="132" rx="5" fill="url(#s1-screen)"/>
             </g>
-            <!-- Floating check-badge arriving (kept the art1-check anim hook) -->
+            <!-- Screen content (all flat — no skew, no clipping) -->
+            <!-- NAFATH header -->
+            <text x="140" y="50" font-family="Inter, sans-serif" font-size="7" font-weight="700" fill="#F1C31B" text-anchor="middle" letter-spacing="1.5">NAFATH</text>
+            <line x1="120" y1="56" x2="160" y2="56" stroke="#FFFFFF" stroke-width="0.5" opacity="0.25"/>
+            <!-- Verified card -->
+            <rect x="118" y="68" width="44" height="32" rx="4" fill="rgba(255,255,255,0.10)" stroke="rgba(255,255,255,0.20)" stroke-width="0.5"/>
+            <circle cx="128" cy="78" r="4.5" fill="#F1C31B"/>
+            <path d="M125.5 78 L127.5 80 L130.5 76" stroke="#0F265A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <rect x="136" y="75" width="22" height="2" rx="1" fill="#FFFFFF" opacity="0.85"/>
+            <rect x="136" y="80" width="16" height="1.6" rx="0.8" fill="#FFFFFF" opacity="0.45"/>
+            <rect x="120" y="88" width="40" height="1.6" rx="0.8" fill="#FFFFFF" opacity="0.30"/>
+            <rect x="120" y="93" width="32" height="1.6" rx="0.8" fill="#FFFFFF" opacity="0.30"/>
+            <!-- ID card preview row -->
+            <rect x="118" y="108" width="44" height="22" rx="3" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" stroke-width="0.5"/>
+            <rect x="122" y="113" width="10" height="12" rx="1" fill="#F1C31B" opacity="0.55"/>
+            <rect x="136" y="115" width="22" height="1.6" rx="0.8" fill="#FFFFFF" opacity="0.55"/>
+            <rect x="136" y="120" width="16" height="1.6" rx="0.8" fill="#FFFFFF" opacity="0.35"/>
+            <rect x="136" y="125" width="14" height="1.6" rx="0.8" fill="#FFFFFF" opacity="0.30"/>
+            <!-- CTA button -->
+            <rect x="118" y="142" width="44" height="14" rx="7" fill="#F1C31B"/>
+            <text x="140" y="151" font-family="Inter, sans-serif" font-size="6" font-weight="700" fill="#0F265A" text-anchor="middle" letter-spacing="0.6">VERIFY</text>
+            <!-- Home indicator -->
+            <rect x="130" y="161" width="20" height="2" rx="1" fill="#FFFFFF" opacity="0.40"/>
+            <!-- Floating check-badge (kept the art1-check anim hook) -->
             <ellipse cx="208" cy="76" rx="14" ry="3" fill="#0F265A" opacity="0.18"/>
             <g class="art1-check" style="transform-origin: 208px 60px;">
               <circle cx="208" cy="60" r="18" fill="url(#s1-checkBadge)"/>
@@ -1401,14 +1413,129 @@
 <!-- ============================================================
      SECTION 9, FOR INSTITUTIONS
      ============================================================ -->
-<section class="section" id="institutions">
-  <div class="container inst-container">
-    <p class="eyebrow">For institutions</p>
-    <h2 class="section-title">Larger allocations, relationship-managed.</h2>
-    <p class="section-lede">
-      Corporate treasuries, endowments, foundations, and family offices can access opportunities on Alraedah Invest at institutional scale, with a dedicated relationship manager.
-    </p>
-    <a href="mailto:invest@alraedah.sa?subject=Institutional%20enquiry" class="btn btn-primary btn-lg">Book a call with our institutional team</a>
+<section class="section section-subtle" id="institutions">
+  <div class="container">
+    <div class="inst-grid">
+      <div class="inst-copy">
+        <p class="eyebrow">For institutions</p>
+        <h2 class="section-title">Larger allocations, relationship-managed.</h2>
+        <p class="section-lede">
+          Corporate treasuries, endowments, foundations, and family offices can access opportunities on Alraedah Invest at institutional scale, with a dedicated relationship manager.
+        </p>
+        <ul class="inst-points">
+          <li><span class="inst-point-num tabular">SAR 1M+</span><span class="inst-point-text">Custom allocation sizes per opportunity</span></li>
+          <li><span class="inst-point-num">1:1</span><span class="inst-point-text">Dedicated relationship manager and reporting</span></li>
+          <li><span class="inst-point-num tabular">T&amp;C</span><span class="inst-point-text">Contracts adapted to institutional governance</span></li>
+        </ul>
+        <a href="mailto:invest@alraedah.sa?subject=Institutional%20enquiry" class="btn btn-primary btn-lg">Book a call with our institutional team</a>
+      </div>
+
+      <aside class="inst-visual" aria-hidden="true">
+        <svg viewBox="0 0 360 320" xmlns="http://www.w3.org/2000/svg" fill="none">
+          <defs>
+            <linearGradient id="iv-poolTop" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#FFFFFF"/>
+              <stop offset="1" stop-color="#E1ECFB"/>
+            </linearGradient>
+            <linearGradient id="iv-poolSide" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#9FB4D2"/>
+              <stop offset="1" stop-color="#6F86A7"/>
+            </linearGradient>
+            <linearGradient id="iv-cardBlue" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#3A6FCC"/>
+              <stop offset="1" stop-color="#0F265A"/>
+            </linearGradient>
+            <linearGradient id="iv-cardGold" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#F1C31B"/>
+              <stop offset="1" stop-color="#B8901A"/>
+            </linearGradient>
+            <radialGradient id="iv-glow" cx="0.5" cy="0.5" r="0.7">
+              <stop offset="0" stop-color="#F1C31B" stop-opacity="0.30"/>
+              <stop offset="1" stop-color="#F1C31B" stop-opacity="0"/>
+            </radialGradient>
+            <filter id="iv-shadow" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+              <feOffset dy="6"/>
+              <feComponentTransfer><feFuncA type="linear" slope="0.20"/></feComponentTransfer>
+              <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <ellipse cx="180" cy="290" rx="140" ry="8" fill="#0F265A" opacity="0.10"/>
+          <ellipse cx="180" cy="200" rx="160" ry="80" fill="url(#iv-glow)"/>
+
+          <!-- Three institutional source cards arranged in a fan, feeding the central pool -->
+          <!-- Source card 1: Treasury (left) -->
+          <g filter="url(#iv-shadow)" transform="translate(20 60)">
+            <rect width="80" height="50" rx="6" fill="url(#iv-cardBlue)"/>
+            <rect x="8" y="10" width="38" height="3" rx="1.5" fill="#F1C31B"/>
+            <rect x="8" y="18" width="50" height="2" rx="1" fill="#FFFFFF" opacity="0.5"/>
+            <rect x="8" y="24" width="34" height="2" rx="1" fill="#FFFFFF" opacity="0.35"/>
+            <rect x="8" y="36" width="20" height="6" rx="1" fill="#FFFFFF" opacity="0.20"/>
+            <text x="40" y="9" font-family="Inter, sans-serif" font-size="6" font-weight="700" fill="#F1C31B" text-anchor="middle" letter-spacing="0.6">TREASURY</text>
+          </g>
+
+          <!-- Source card 2: Endowment (top center) -->
+          <g filter="url(#iv-shadow)" transform="translate(140 30)">
+            <rect width="80" height="50" rx="6" fill="url(#iv-cardBlue)"/>
+            <rect x="8" y="10" width="38" height="3" rx="1.5" fill="#F1C31B"/>
+            <rect x="8" y="18" width="50" height="2" rx="1" fill="#FFFFFF" opacity="0.5"/>
+            <rect x="8" y="24" width="40" height="2" rx="1" fill="#FFFFFF" opacity="0.35"/>
+            <rect x="8" y="36" width="20" height="6" rx="1" fill="#FFFFFF" opacity="0.20"/>
+            <text x="40" y="9" font-family="Inter, sans-serif" font-size="6" font-weight="700" fill="#F1C31B" text-anchor="middle" letter-spacing="0.6">ENDOWMENT</text>
+          </g>
+
+          <!-- Source card 3: Family office (right) -->
+          <g filter="url(#iv-shadow)" transform="translate(260 60)">
+            <rect width="80" height="50" rx="6" fill="url(#iv-cardBlue)"/>
+            <rect x="8" y="10" width="38" height="3" rx="1.5" fill="#F1C31B"/>
+            <rect x="8" y="18" width="50" height="2" rx="1" fill="#FFFFFF" opacity="0.5"/>
+            <rect x="8" y="24" width="30" height="2" rx="1" fill="#FFFFFF" opacity="0.35"/>
+            <rect x="8" y="36" width="20" height="6" rx="1" fill="#FFFFFF" opacity="0.20"/>
+            <text x="40" y="9" font-family="Inter, sans-serif" font-size="6" font-weight="700" fill="#F1C31B" text-anchor="middle" letter-spacing="0.6">FAMILY OFFICE</text>
+          </g>
+
+          <!-- Connector lines flowing into the pool -->
+          <path d="M60 110 Q 90 150, 145 200" stroke="#1F4188" stroke-width="1" fill="none" opacity="0.4" stroke-linecap="round"/>
+          <path d="M60 110 Q 90 150, 145 200" stroke="#F1C31B" stroke-width="1.5" fill="none" stroke-dasharray="2 4" opacity="0.7" stroke-linecap="round"/>
+
+          <path d="M180 80 L180 200" stroke="#1F4188" stroke-width="1" fill="none" opacity="0.4"/>
+          <path d="M180 80 L180 200" stroke="#F1C31B" stroke-width="1.5" fill="none" stroke-dasharray="2 4" opacity="0.7"/>
+
+          <path d="M300 110 Q 270 150, 215 200" stroke="#1F4188" stroke-width="1" fill="none" opacity="0.4" stroke-linecap="round"/>
+          <path d="M300 110 Q 270 150, 215 200" stroke="#F1C31B" stroke-width="1.5" fill="none" stroke-dasharray="2 4" opacity="0.7" stroke-linecap="round"/>
+
+          <!-- Travelling coins along each path -->
+          <circle cx="100" cy="160" r="4" fill="url(#iv-cardGold)" opacity="0.85"/>
+          <circle cx="180" cy="140" r="4" fill="url(#iv-cardGold)" opacity="0.85"/>
+          <circle cx="260" cy="160" r="4" fill="url(#iv-cardGold)" opacity="0.85"/>
+
+          <!-- Central pool / opportunity -->
+          <g filter="url(#iv-shadow)">
+            <!-- Pool top -->
+            <path d="M120 200 L180 175 L240 200 L180 225 Z" fill="url(#iv-poolTop)"/>
+            <!-- Pool front -->
+            <path d="M120 200 L120 250 L180 275 L180 225 Z" fill="url(#iv-poolSide)"/>
+            <!-- Pool right -->
+            <path d="M240 200 L240 250 L180 275 L180 225 Z" fill="url(#iv-poolSide)" opacity="0.85"/>
+            <!-- Coins inside pool -->
+            <circle cx="148" cy="206" r="6" fill="url(#iv-cardGold)"/>
+            <circle cx="166" cy="201" r="7" fill="url(#iv-cardGold)"/>
+            <circle cx="186" cy="203" r="7.5" fill="url(#iv-cardGold)"/>
+            <circle cx="206" cy="201" r="6.5" fill="url(#iv-cardGold)"/>
+            <circle cx="222" cy="206" r="6" fill="url(#iv-cardGold)"/>
+          </g>
+          <!-- Pool label -->
+          <rect x="148" y="240" width="64" height="14" rx="7" fill="#0F265A"/>
+          <text x="180" y="249.5" font-family="Inter, sans-serif" font-size="7" font-weight="700" fill="#F1C31B" text-anchor="middle" letter-spacing="0.6">OPPORTUNITY</text>
+
+          <!-- Subtle accent dots -->
+          <circle cx="40" cy="40" r="3" fill="#F1C31B" opacity="0.5"/>
+          <circle cx="320" cy="40" r="3" fill="#F1C31B" opacity="0.5"/>
+          <circle cx="30" cy="200" r="2.5" fill="#F1C31B" opacity="0.4"/>
+          <circle cx="330" cy="200" r="2.5" fill="#F1C31B" opacity="0.4"/>
+        </svg>
+      </aside>
+    </div>
   </div>
 </section>
 
