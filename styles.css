@@ -1606,6 +1606,37 @@ details[open] .faq-q::after { content: '−'; }
   50%      { transform: translateY(-3px); }
 }
 /* ============================================================
+   RETURNS INTRO — 50/50 grid: copy left, faux-3D scene right.
+   Sits above the calculator. Gives the section a wordless preview
+   of the velocity-of-money concept before the slider work.
+   ============================================================ */
+.returns-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  align-items: center;
+  margin-bottom: var(--space-9);
+}
+.returns-intro-copy { display: flex; flex-direction: column; }
+.returns-intro-copy .section-title { margin-bottom: var(--space-4); }
+.returns-intro-copy .section-lede { margin: 0; }
+.returns-intro-scene {
+  border-radius: var(--r-md);
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(241,195,27,0.08) 0%, rgba(31,65,136,0.04) 100%);
+  border: 1px solid rgba(255,255,255,0.5);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.7),
+    0 8px 32px rgba(15, 38, 87, 0.10);
+  padding: var(--space-4);
+}
+.returns-intro-scene svg { display: block; width: 100%; height: auto; }
+@media (max-width: 1024px) {
+  .returns-intro { grid-template-columns: 1fr; gap: var(--space-6); }
+  .returns-intro-scene { max-width: 480px; margin: 0 auto; }
+}
+
+/* ============================================================
    MOTION PANEL — three faux-3D scene cards before the FAQ.
    Each card stacks: scene illustration on top, copy beneath.
    Glass tile (light) backdrop, isometric SVG illustrations.
