@@ -1602,48 +1602,12 @@ details[open] .faq-q::after { content: '−'; }
   0%, 100% { transform: translateY(0); }
   50%      { transform: translateY(-3px); }
 }
-/* Step 3: the gold arc rotates slowly around the SAR center, dots breathe */
-.art3-arc {
-  transform-box: fill-box;
-  animation: art3-orbit 8s linear infinite;
-}
-@keyframes art3-orbit {
-  to { transform: rotate(360deg); }
-}
-.art3-orbit { transform-box: fill-box; transform-origin: center; }
-.art3-orbit-1 { animation: dot-pulse 3s ease-in-out infinite; animation-delay: 0s; }
-.art3-orbit-2 { animation: dot-pulse 3s ease-in-out infinite; animation-delay: 1s; }
-.art3-orbit-3 { animation: dot-pulse 3s ease-in-out infinite; animation-delay: 2s; }
-
-/* MONEY FLOW DIVIDER: full-width section, dots stream left → right */
-.flow-divider {
-  position: relative;
-  background: linear-gradient(180deg, var(--surface-light) 0%, var(--white) 100%);
-  padding: 0;
-  overflow: hidden;
-}
-.flow-divider-svg {
-  display: block;
-  width: 100%;
-  height: 80px;
-}
-.flow-dot {
-  animation: flow-dot-travel 9s linear infinite;
-}
-@keyframes flow-dot-travel {
-  0%   { transform: translateX(-20px); opacity: 0; }
-  10%  { opacity: 1; }
-  90%  { opacity: 1; }
-  100% { transform: translateX(1220px); opacity: 0; }
-}
-
-/* Reduced motion: kill all looping animations, but keep the
-   first-paint entrance animations capped already-elsewhere. */
+/* Reduced motion: kill all looping animations. The first-paint
+   entrance animations are already handled in the earlier @media block. */
 @media (prefers-reduced-motion: reduce) {
   .hero-accent-flow,
   .hero-accent-dot,
-  .art1-check, .art2-highlight, .art3-arc, .art3-orbit,
-  .flow-dot {
+  .art1-check, .art2-highlight {
     animation: none !important;
   }
   .hero-accent-flow { stroke-dashoffset: 0; }

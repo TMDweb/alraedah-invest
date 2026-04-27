@@ -262,18 +262,16 @@
         <p>Return, tenor, funding progress, shown upfront. No fine print.</p>
       </article>
       <article class="step">
-        <div class="step-art step-art-3" aria-hidden="true">
+        <div class="step-art" aria-hidden="true">
           <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="60" cy="60" r="36" fill="none" stroke="var(--blue-100)" stroke-width="2" stroke-dasharray="4 4"/>
-            <g class="art3-arc" style="transform-origin: 60px 60px;">
-              <path d="M60 24 A36 36 0 0 1 96 60" stroke="var(--gold)" stroke-width="4" stroke-linecap="round" fill="none"/>
-              <circle cx="96" cy="60" r="6" fill="var(--gold)"/>
-            </g>
+            <path d="M60 24 A36 36 0 0 1 96 60" stroke="var(--gold)" stroke-width="4" stroke-linecap="round" fill="none"/>
+            <circle cx="96" cy="60" r="6" fill="var(--gold)"/>
             <rect x="46" y="46" width="28" height="28" rx="6" fill="var(--blue-primary)"/>
             <text x="60" y="66" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="var(--white)" text-anchor="middle">SAR</text>
-            <circle class="art3-orbit art3-orbit-1" cx="28" cy="40" r="5" fill="var(--blue-200)"/>
-            <circle class="art3-orbit art3-orbit-2" cx="24" cy="72" r="4" fill="var(--blue-200)"/>
-            <circle class="art3-orbit art3-orbit-3" cx="100" cy="90" r="5" fill="var(--gold-200)"/>
+            <circle cx="28" cy="40" r="5" fill="var(--blue-200)"/>
+            <circle cx="24" cy="72" r="4" fill="var(--blue-200)"/>
+            <circle cx="100" cy="90" r="5" fill="var(--gold-200)"/>
           </svg>
         </div>
         <div class="step-num">Step 3</div>
@@ -860,27 +858,6 @@
       </div>
     </div>
   </div>
-</section>
-
-<!-- ============================================================
-     ANIMATED FLOW DIVIDER — visual rest beat between risk and FAQ.
-     Repeating gold dots flow left → right at slow, steady cadence,
-     echoing the "your money keeps moving" thesis.
-     ============================================================ -->
-<section class="flow-divider" aria-hidden="true">
-  <svg class="flow-divider-svg" viewBox="0 0 1200 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <!-- Subtle base track -->
-    <path d="M0 40 Q 200 30, 400 40 T 800 40 T 1200 40" stroke="var(--blue-100)" stroke-width="1" fill="none" opacity="0.6"/>
-    <path d="M0 40 Q 200 30, 400 40 T 800 40 T 1200 40" stroke="var(--gold-200)" stroke-width="1.5" fill="none" stroke-dasharray="3 8" opacity="0.7"/>
-    <!-- Travelling dots: each starts off-screen left and animates across -->
-    <g class="flow-dots">
-      <circle class="flow-dot" cx="0" cy="40" r="5" fill="var(--gold)" style="animation-delay: 0s;"/>
-      <circle class="flow-dot" cx="0" cy="40" r="4" fill="var(--gold)" style="animation-delay: 1.5s;"/>
-      <circle class="flow-dot" cx="0" cy="40" r="6" fill="var(--gold)" style="animation-delay: 3s;"/>
-      <circle class="flow-dot" cx="0" cy="40" r="3" fill="var(--gold-600)" style="animation-delay: 4.5s;"/>
-      <circle class="flow-dot" cx="0" cy="40" r="5" fill="var(--gold)" style="animation-delay: 6s;"/>
-    </g>
-  </svg>
 </section>
 
 <!-- ============================================================
