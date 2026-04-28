@@ -1326,8 +1326,8 @@ p, li, .hero-lead, .section-lede, .faq-a, .risk-card p, .why-body { text-wrap: p
 }
 [dir="rtl"] .why-dotpair { left: auto; right: var(--space-7); }
 [dir="rtl"] .why-phone { left: auto; right: clamp(-40px, -2vw, 0px); transform: scaleX(-1); }
-.why-container { position: relative; z-index: 2; padding-left: clamp(0px, 26vw, 380px); }
-[dir="rtl"] .why-container { padding-left: 0; padding-right: clamp(0px, 26vw, 380px); }
+.why-container { position: relative; z-index: 2; padding-left: clamp(0px, 18vw, 260px); }
+[dir="rtl"] .why-container { padding-left: 0; padding-right: clamp(0px, 18vw, 260px); }
 .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-5); margin-top: var(--space-7); }
 .why-card {
   position: relative;
