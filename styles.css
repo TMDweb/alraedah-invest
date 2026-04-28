@@ -1306,25 +1306,25 @@ p, li, .hero-lead, .section-lede, .faq-a, .risk-card p, .why-body { text-wrap: p
 #why { position: relative; }
 .why-band {
   display: grid;
-  grid-template-columns: minmax(220px, 1fr) minmax(0, 3fr);
-  gap: var(--space-9);
+  grid-template-columns: minmax(0, 220px) minmax(0, 1fr);
+  gap: var(--space-7);
   align-items: center;
 }
 .why-figure {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--space-7);
+  gap: var(--space-5);
   user-select: none;
 }
 .why-figure-dotpair {
-  width: clamp(160px, 80%, 260px);
+  width: clamp(140px, 90%, 220px);
   height: auto;
   display: block;
 }
 .why-figure-phone {
   width: 100%;
-  max-width: 380px;
+  max-width: 260px;
   height: auto;
   display: block;
 }
