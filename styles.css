@@ -131,13 +131,12 @@ p, li, .hero-lead, .section-lede, .faq-a, .risk-card p, .why-body { text-wrap: p
   position: relative;
   overflow: hidden;
 }
-/* Native candlestick texture (mockup 01) — sits behind the dot grid and
-   gradient, so contrast on copy is unchanged. */
+/* Native candlestick texture (mockup 01) — full-width back layer, blue-on-blue,
+   sits behind the dot grid and gold flow accent. */
 .hero::after {
   content: ''; position: absolute; inset: 0;
   background: url('assets/visuals/hero-candles.jpg') center / cover no-repeat;
-  opacity: 0.28;
-  mix-blend-mode: screen;
+  opacity: 0.55;
   pointer-events: none;
   z-index: 0;
 }
@@ -319,18 +318,17 @@ p, li, .hero-lead, .section-lede, .faq-a, .risk-card p, .why-body { text-wrap: p
 .section-dark { background: var(--blue-800); color: var(--white); }
 .section-narrow { padding: var(--space-9) 0; }
 
-/* Dot-pair brand accent (mockup 02) — sits opposite the eyebrow/title.
-   Decorative; aria-hidden in markup. */
+/* Dot-pair brand accent (mockup 02) — sits at the heading row, right side. */
 .has-dotpair { position: relative; }
 .dotpair-accent {
   position: absolute;
-  top: var(--space-1);
-  right: var(--space-5);
-  width: 120px;
+  top: var(--space-9);
+  right: var(--space-3);
+  width: 220px;
   height: auto;
   pointer-events: none;
 }
-[dir="rtl"] .dotpair-accent { right: auto; left: var(--space-5); }
+[dir="rtl"] .dotpair-accent { right: auto; left: var(--space-3); }
 
 /* ---- HOW IT WORKS -------------------------------------------------------- */
 .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); }
@@ -1310,27 +1308,26 @@ p, li, .hero-lead, .section-lede, .faq-a, .risk-card p, .why-body { text-wrap: p
   position: absolute;
   top: var(--space-7);
   left: var(--space-6);
-  width: 130px;
+  width: 180px;
   height: auto;
-  opacity: 0.85;
   pointer-events: none;
   z-index: 0;
 }
 .why-phone {
   position: absolute;
   top: 50%;
-  left: -30px;
+  left: -20px;
   transform: translateY(-50%);
-  width: clamp(220px, 24vw, 360px);
+  width: clamp(300px, 30vw, 460px);
   height: auto;
   pointer-events: none;
   user-select: none;
   z-index: 0;
 }
 [dir="rtl"] .why-dotpair { left: auto; right: var(--space-6); }
-[dir="rtl"] .why-phone { left: auto; right: -30px; transform: translateY(-50%) scaleX(-1); }
-.why-container { position: relative; z-index: 1; padding-left: clamp(0px, 18vw, 240px); }
-[dir="rtl"] .why-container { padding-left: 0; padding-right: clamp(0px, 18vw, 240px); }
+[dir="rtl"] .why-phone { left: auto; right: -20px; transform: translateY(-50%) scaleX(-1); }
+.why-container { position: relative; z-index: 1; padding-left: clamp(0px, 22vw, 320px); }
+[dir="rtl"] .why-container { padding-left: 0; padding-right: clamp(0px, 22vw, 320px); }
 .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-5); }
 .why-card {
   position: relative;
