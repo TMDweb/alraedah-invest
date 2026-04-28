@@ -19,3 +19,7 @@ fonts/*.woff2
 
 # Internal working docs
 README-internal.md
+
+# Source design pack — raw PNGs are reference-only; optimized exports
+# live in assets/visuals/.
+invest LP Designs/

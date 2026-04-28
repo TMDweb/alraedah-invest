@@ -131,12 +131,24 @@ p, li, .hero-lead, .section-lede, .faq-a, .risk-card p, .why-body { text-wrap: p
   position: relative;
   overflow: hidden;
 }
+/* Native candlestick texture (mockup 01) — sits behind the dot grid and
+   gradient, so contrast on copy is unchanged. */
+.hero::after {
+  content: ''; position: absolute; inset: 0;
+  background: url('assets/visuals/hero-candles.jpg') center / cover no-repeat;
+  opacity: 0.28;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 0;
+}
 .hero::before {
   content: ''; position: absolute; inset: 0;
   background-image: radial-gradient(rgba(255,255,255,0.08) 1.5px, transparent 1.5px);
   background-size: 32px 32px;
   opacity: 0.35;
+  z-index: 0;
 }
+.hero > .container { position: relative; z-index: 1; }
 .hero-accent {
   position: absolute;
   right: -8%;
@@ -306,6 +318,19 @@ p, li, .hero-lead, .section-lede, .faq-a, .risk-card p, .why-body { text-wrap: p
 .section-subtle { background: var(--surface-light); }
 .section-dark { background: var(--blue-800); color: var(--white); }
 .section-narrow { padding: var(--space-9) 0; }
+
+/* Dot-pair brand accent (mockup 02) — sits opposite the eyebrow/title.
+   Decorative; aria-hidden in markup. */
+.has-dotpair { position: relative; }
+.dotpair-accent {
+  position: absolute;
+  top: var(--space-1);
+  right: var(--space-5);
+  width: 120px;
+  height: auto;
+  pointer-events: none;
+}
+[dir="rtl"] .dotpair-accent { right: auto; left: var(--space-5); }
 
 /* ---- HOW IT WORKS -------------------------------------------------------- */
 .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); }
@@ -582,6 +607,26 @@ p, li, .hero-lead, .section-lede, .faq-a, .risk-card p, .why-body { text-wrap: p
   border-radius: var(--r-lg);
   text-align: center;
 }
+/* Portrait variant (mockup 03) — figure on the left, copy on the right */
+.returns-alt-portrait {
+  display: grid;
+  grid-template-columns: minmax(220px, 320px) 1fr;
+  gap: var(--space-7);
+  align-items: center;
+  text-align: left;
+}
+.returns-alt-portrait .alt-lede,
+.returns-alt-portrait .alt-choices { margin-left: 0; margin-right: 0; }
+.returns-alt-portrait .alt-steps { justify-content: flex-start; }
+.alt-figure {
+  width: 100%;
+  height: auto;
+  display: block;
+  align-self: center;
+  user-select: none;
+}
+[dir="rtl"] .returns-alt-portrait { grid-template-columns: 1fr minmax(220px, 320px); }
+[dir="rtl"] .returns-alt-portrait .alt-figure { order: 2; }
 .alt-eyebrow {
   font: var(--fw-semibold) var(--fs-caption)/1.2 var(--font-latin);
   color: var(--blue-primary);
@@ -1260,6 +1305,32 @@ p, li, .hero-lead, .section-lede, .faq-a, .risk-card p, .why-body { text-wrap: p
 }
 
 /* ---- WHY (section-dark) -------------------------------------------------- */
+#why { position: relative; overflow: hidden; }
+.why-dotpair {
+  position: absolute;
+  top: var(--space-7);
+  left: var(--space-6);
+  width: 130px;
+  height: auto;
+  opacity: 0.85;
+  pointer-events: none;
+  z-index: 0;
+}
+.why-phone {
+  position: absolute;
+  top: 50%;
+  left: -30px;
+  transform: translateY(-50%);
+  width: clamp(220px, 24vw, 360px);
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+[dir="rtl"] .why-dotpair { left: auto; right: var(--space-6); }
+[dir="rtl"] .why-phone { left: auto; right: -30px; transform: translateY(-50%) scaleX(-1); }
+.why-container { position: relative; z-index: 1; padding-left: clamp(0px, 18vw, 240px); }
+[dir="rtl"] .why-container { padding-left: 0; padding-right: clamp(0px, 18vw, 240px); }
 .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-5); }
 .why-card {
   position: relative;
@@ -1505,6 +1576,9 @@ details[open] .faq-q::after { content: '−'; }
   .steps, .opps-grid, .compare-summary, .calc-results, .sim-wrap, .sim-outcomes, .why-grid { grid-template-columns: 1fr 1fr; }
   .risk-grid { grid-template-columns: 1fr; }
   .returns-clarity, .payment-flow, .simple-views, .tool-picker { grid-template-columns: 1fr; }
+  .why-phone, .why-dotpair { display: none; }
+  .why-container { padding-left: 0; }
+  [dir="rtl"] .why-container { padding-right: 0; }
   .flow-arrow { transform: rotate(90deg); min-height: 24px; }
   .empty-state, .between-grid { grid-template-columns: 1fr; gap: var(--space-6); }
   .calc-grid { grid-template-columns: 1fr; }
@@ -1561,6 +1635,11 @@ details[open] .faq-q::after { content: '−'; }
   .rule-row { grid-template-columns: 1fr; gap: var(--space-2); }
   .payment-story, .tool-primary, .tool-panel, .empty-state, .between-state, .risk-mgmt { padding: var(--space-6); }
   .returns-alt { padding: var(--space-7) var(--space-5); }
+  .returns-alt-portrait { grid-template-columns: 1fr; text-align: center; gap: var(--space-5); }
+  .returns-alt-portrait .alt-steps { justify-content: center; }
+  .returns-alt-portrait .alt-lede,
+  .returns-alt-portrait .alt-choices { margin-left: auto; margin-right: auto; }
+  .alt-figure { display: none; }
   .alt-steps { flex-direction: column; gap: var(--space-3); }
   .alt-arrow { transform: rotate(90deg); }
   .alt-choices { grid-template-columns: 1fr; }
@@ -1570,6 +1649,7 @@ details[open] .faq-q::after { content: '−'; }
   .result-mini-grid { grid-template-columns: 1fr; }
   .section-title { font-size: 28px; }
   .hero-card { padding: var(--space-5); }
+  .dotpair-accent { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
