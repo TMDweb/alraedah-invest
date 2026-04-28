@@ -1303,35 +1303,32 @@ p, li, .hero-lead, .section-lede, .faq-a, .risk-card p, .why-body { text-wrap: p
 }
 
 /* ---- WHY (section-dark) -------------------------------------------------- */
-#why { position: relative; }
-.why-band {
-  display: grid;
-  grid-template-columns: minmax(0, 220px) minmax(0, 1fr);
-  gap: var(--space-7);
-  align-items: center;
-}
-.why-figure {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--space-5);
+#why { position: relative; overflow: hidden; }
+.why-dotpair {
+  position: absolute;
+  top: var(--space-7);
+  left: var(--space-7);
+  width: clamp(80px, 8vw, 120px);
+  height: auto;
+  pointer-events: none;
   user-select: none;
+  z-index: 0;
 }
-.why-figure-dotpair {
-  width: clamp(140px, 90%, 220px);
+.why-phone {
+  position: absolute;
+  left: clamp(-40px, -2vw, 0px);
+  bottom: 0;
+  width: clamp(280px, 28vw, 420px);
   height: auto;
-  display: block;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
 }
-.why-figure-phone {
-  width: 100%;
-  max-width: 260px;
-  height: auto;
-  display: block;
-}
-[dir="rtl"] .why-figure { align-items: flex-end; }
-[dir="rtl"] .why-figure-phone { transform: scaleX(-1); }
-.why-content { min-width: 0; }
-.why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-5); }
+[dir="rtl"] .why-dotpair { left: auto; right: var(--space-7); }
+[dir="rtl"] .why-phone { left: auto; right: clamp(-40px, -2vw, 0px); transform: scaleX(-1); }
+.why-container { position: relative; z-index: 2; padding-left: clamp(0px, 26vw, 380px); }
+[dir="rtl"] .why-container { padding-left: 0; padding-right: clamp(0px, 26vw, 380px); }
+.why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-5); margin-top: var(--space-7); }
 .why-card {
   position: relative;
   background: linear-gradient(135deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.04) 100%);
@@ -1576,11 +1573,9 @@ details[open] .faq-q::after { content: '−'; }
   .steps, .opps-grid, .compare-summary, .calc-results, .sim-wrap, .sim-outcomes, .why-grid { grid-template-columns: 1fr 1fr; }
   .risk-grid { grid-template-columns: 1fr; }
   .returns-clarity, .payment-flow, .simple-views, .tool-picker { grid-template-columns: 1fr; }
-  .why-band { grid-template-columns: 1fr; gap: var(--space-7); }
-  .why-figure { flex-direction: row; align-items: center; gap: var(--space-5); }
-  .why-figure-dotpair { width: 120px; }
-  .why-figure-phone { max-width: 280px; margin-left: 0; }
-  [dir="rtl"] .why-figure-phone { margin-right: 0; }
+  .why-phone, .why-dotpair { display: none; }
+  .why-container { padding-left: 0; }
+  [dir="rtl"] .why-container { padding-right: 0; }
   .flow-arrow { transform: rotate(90deg); min-height: 24px; }
   .empty-state, .between-grid { grid-template-columns: 1fr; gap: var(--space-6); }
   .calc-grid { grid-template-columns: 1fr; }
@@ -1611,7 +1606,6 @@ details[open] .faq-q::after { content: '−'; }
   .state-toolbar .row { flex-direction: column; align-items: flex-start; }
   .trust-row { grid-template-columns: 1fr; }
   .steps, .opps-grid, .compare-summary, .calc-results, .why-grid, .footer-cols { grid-template-columns: 1fr; }
-  .why-figure { display: none; }
   /* Simulator: keep all 3 scenes side-by-side on mobile and compact heights so
      the whole panel fits inside one mobile viewport (~640px target on 812h). */
   .sim-wrap { grid-template-columns: repeat(3, 1fr); gap: var(--space-3); margin: var(--space-4) 0 var(--space-4); }
