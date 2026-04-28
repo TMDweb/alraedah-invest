@@ -1303,31 +1303,34 @@ p, li, .hero-lead, .section-lede, .faq-a, .risk-card p, .why-body { text-wrap: p
 }
 
 /* ---- WHY (section-dark) -------------------------------------------------- */
-#why { position: relative; overflow: hidden; }
-.why-dotpair {
-  position: absolute;
-  top: var(--space-7);
-  left: var(--space-6);
-  width: 180px;
-  height: auto;
-  pointer-events: none;
-  z-index: 0;
+#why { position: relative; }
+.why-band {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) minmax(0, 3fr);
+  gap: var(--space-9);
+  align-items: center;
 }
-.why-phone {
-  position: absolute;
-  top: 50%;
-  left: -20px;
-  transform: translateY(-50%);
-  width: clamp(300px, 30vw, 460px);
-  height: auto;
-  pointer-events: none;
+.why-figure {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-7);
   user-select: none;
-  z-index: 0;
 }
-[dir="rtl"] .why-dotpair { left: auto; right: var(--space-6); }
-[dir="rtl"] .why-phone { left: auto; right: -20px; transform: translateY(-50%) scaleX(-1); }
-.why-container { position: relative; z-index: 1; padding-left: clamp(0px, 22vw, 320px); }
-[dir="rtl"] .why-container { padding-left: 0; padding-right: clamp(0px, 22vw, 320px); }
+.why-figure-dotpair {
+  width: clamp(160px, 80%, 260px);
+  height: auto;
+  display: block;
+}
+.why-figure-phone {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  display: block;
+}
+[dir="rtl"] .why-figure { align-items: flex-end; }
+[dir="rtl"] .why-figure-phone { transform: scaleX(-1); }
+.why-content { min-width: 0; }
 .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-5); }
 .why-card {
   position: relative;
@@ -1573,9 +1576,11 @@ details[open] .faq-q::after { content: '−'; }
   .steps, .opps-grid, .compare-summary, .calc-results, .sim-wrap, .sim-outcomes, .why-grid { grid-template-columns: 1fr 1fr; }
   .risk-grid { grid-template-columns: 1fr; }
   .returns-clarity, .payment-flow, .simple-views, .tool-picker { grid-template-columns: 1fr; }
-  .why-phone, .why-dotpair { display: none; }
-  .why-container { padding-left: 0; }
-  [dir="rtl"] .why-container { padding-right: 0; }
+  .why-band { grid-template-columns: 1fr; gap: var(--space-7); }
+  .why-figure { flex-direction: row; align-items: center; gap: var(--space-5); }
+  .why-figure-dotpair { width: 120px; }
+  .why-figure-phone { max-width: 280px; margin-left: 0; }
+  [dir="rtl"] .why-figure-phone { margin-right: 0; }
   .flow-arrow { transform: rotate(90deg); min-height: 24px; }
   .empty-state, .between-grid { grid-template-columns: 1fr; gap: var(--space-6); }
   .calc-grid { grid-template-columns: 1fr; }
@@ -1606,6 +1611,7 @@ details[open] .faq-q::after { content: '−'; }
   .state-toolbar .row { flex-direction: column; align-items: flex-start; }
   .trust-row { grid-template-columns: 1fr; }
   .steps, .opps-grid, .compare-summary, .calc-results, .why-grid, .footer-cols { grid-template-columns: 1fr; }
+  .why-figure { display: none; }
   /* Simulator: keep all 3 scenes side-by-side on mobile and compact heights so
      the whole panel fits inside one mobile viewport (~640px target on 812h). */
   .sim-wrap { grid-template-columns: repeat(3, 1fr); gap: var(--space-3); margin: var(--space-4) 0 var(--space-4); }
