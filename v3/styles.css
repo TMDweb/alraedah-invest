@@ -214,11 +214,14 @@ button, input { font: inherit; }
 }
 
 .hero h1 {
-  max-width: 13ch;
+  max-width: 18ch;
   margin: 0;
   font-size: clamp(48px, 5.8vw, 88px);
-  line-height: .94;
+  line-height: .96;
   letter-spacing: var(--ls-display-xl);
+}
+.hero h1 .hl {
+  color: var(--gold);
 }
 
 .hero-copy p {
