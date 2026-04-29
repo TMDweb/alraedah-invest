@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap");
+@import url("../tokens.css");
 
 @font-face {
   font-family: "Ping AR";
@@ -17,8 +17,8 @@
   --paper: #f7f9fc;
   --line: rgba(11, 26, 51, .12);
   --white: #fff;
-  --font: "Outfit", "Ping AR", system-ui, sans-serif;
-  --mono: "JetBrains Mono", ui-monospace, monospace;
+  --font: var(--font-latin);
+  --mono: var(--font-num);
   --ease: cubic-bezier(.16, 1, .3, 1);
 }
 
@@ -188,11 +188,11 @@ button, input { font: inherit; }
 }
 
 .hero h1 {
-  max-width: 12ch;
+  max-width: 13ch;
   margin: 0;
-  font-size: clamp(52px, 6.2vw, 96px);
-  line-height: .88;
-  letter-spacing: 0;
+  font-size: clamp(48px, 5.8vw, 88px);
+  line-height: .94;
+  letter-spacing: var(--ls-display-xl);
 }
 
 .hero-copy p {
@@ -569,6 +569,12 @@ h2 {
   margin: 0 auto;
 }
 .calc-copy { max-width: 470px; }
+.risk-note {
+  margin-top: 18px;
+  color: rgba(11,26,51,.58) !important;
+  font-size: 13px !important;
+  line-height: 1.45 !important;
+}
 .calc-panel {
   padding: 28px;
   border: 1px solid rgba(7,67,155,.12);
@@ -600,49 +606,120 @@ input[type="range"] {
   width: 100%;
   accent-color: var(--blue);
 }
-.calc-results {
+.tenor-row {
+  display: inline-grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 6px;
+  margin-top: 20px;
+  padding: 6px;
+  border: 1px solid rgba(11,26,51,.1);
+  border-radius: 999px;
+  background: rgba(7,67,155,.045);
+}
+.tenor-btn {
+  min-height: 38px;
+  padding: 0 14px;
+  color: rgba(11,26,51,.68);
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.tenor-btn.is-active {
+  color: #fff;
+  background: var(--blue);
+  box-shadow: 0 10px 24px rgba(7,67,155,.18);
+}
+.scenario-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 12px;
   margin-top: 28px;
 }
-.calc-results div {
+.scenario-card {
   min-height: 128px;
   padding: 18px;
   border: 1px solid rgba(11,26,51,.09);
   border-radius: 22px;
   background: #fff;
 }
-.calc-results strong {
+.scenario-card.is-best {
+  color: #fff;
+  border-color: rgba(255,255,255,.14);
+  background: linear-gradient(145deg, var(--blue-dark), var(--blue));
+  box-shadow: 0 22px 58px rgba(0,50,109,.2);
+}
+.scenario-card span {
+  display: block;
+  color: rgba(11,26,51,.5);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+.scenario-card.is-best span { color: rgba(255,255,255,.7); }
+.scenario-card strong {
   display: block;
   margin-top: 14px;
   font-family: var(--mono);
   font-size: 24px;
 }
-.timeline {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  gap: 14px;
-  align-items: center;
-  margin-top: 28px;
-  color: rgba(11,26,51,.52);
-  font-size: 12px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: .08em;
-}
-.timeline-bars {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 5px;
-  height: 40px;
-  align-items: end;
-}
-.timeline-bars i {
+.scenario-card small {
   display: block;
-  height: var(--h);
-  border-radius: 999px 999px 4px 4px;
-  background: linear-gradient(to top, var(--blue), var(--cyan));
+  margin-top: 10px;
+  color: rgba(11,26,51,.58);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+.scenario-card.is-best small { color: rgba(255,255,255,.72); }
+.calc-disclosure {
+  margin: 12px 0 0;
+  color: rgba(11,26,51,.54);
+  font-size: 12px;
+  line-height: 1.45;
+}
+.return-chart {
+  margin-top: 24px;
+}
+.return-chart svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.cashflow-details {
+  margin-top: 18px;
+  border-radius: 22px;
+}
+.cashflow-details summary {
+  padding: 18px 20px;
+  font-size: 16px;
+}
+.table-wrap {
+  overflow-x: auto;
+  padding: 0 18px 18px;
+}
+.cashflow-details table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 620px;
+}
+.cashflow-details th,
+.cashflow-details td {
+  padding: 12px 10px;
+  border-bottom: 1px solid rgba(11,26,51,.08);
+  color: rgba(11,26,51,.76);
+  font-size: 13px;
+  text-align: left;
+}
+.cashflow-details th {
+  color: var(--blue-dark);
+  font-weight: 800;
+}
+.cashflow-details td {
+  font-family: var(--mono);
 }
 
 .comparison {
@@ -898,8 +975,14 @@ details p {
   }
   h2 { font-size: 42px; }
   .calc-results,
+  .scenario-grid,
   .qa-grid {
     grid-template-columns: 1fr;
+  }
+  .tenor-row {
+    width: 100%;
+    grid-template-columns: 1fr;
+    border-radius: 20px;
   }
   .amount-row {
     display: block;
