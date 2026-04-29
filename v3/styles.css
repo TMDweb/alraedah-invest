@@ -52,15 +52,15 @@ button, input { font: inherit; }
 .site-header {
   position: fixed;
   left: 24px;
-  right: auto;
+  right: 24px;
   top: 18px;
   z-index: 10;
-  display: flex;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  width: auto;
+  gap: 18px;
   min-height: 76px;
-  padding: 10px 16px;
+  padding: 10px 14px;
   color: var(--ink);
   border: 1px solid rgba(255,255,255,.54);
   border-radius: 22px;
@@ -80,14 +80,14 @@ button, input { font: inherit; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 188px;
+  width: 180px;
   height: 56px;
   border-radius: 0;
   background: transparent;
   box-shadow: none;
 }
 .brand img {
-  width: 166px;
+  width: 158px;
   height: auto;
 }
 
@@ -97,8 +97,9 @@ button, input { font: inherit; }
   align-items: center;
   gap: 6px;
   padding: 5px;
-  border: 1px solid rgba(255,255,255,.12);
+  border: 1px solid rgba(11,26,51,.08);
   border-radius: 999px;
+  background: rgba(7,67,155,.045);
 }
 
 .site-header.is-scrolled .nav { border-color: rgba(11,26,51,.08); }
@@ -107,11 +108,11 @@ button, input { font: inherit; }
   border-radius: 999px;
   font-size: 13px;
   font-weight: 600;
-  color: rgba(255,255,255,.78);
+  color: rgba(11,26,51,.68);
   transition: color .2s var(--ease), background .2s var(--ease);
 }
 .site-header.is-scrolled .nav a { color: rgba(11,26,51,.62); }
-.nav a:hover { color: #fff; background: rgba(255,255,255,.12); }
+.nav a:hover { color: var(--blue-dark); background: rgba(7,67,155,.08); }
 .site-header.is-scrolled .nav a:hover { color: var(--blue-dark); background: rgba(7,67,155,.08); }
 
 .header-cta,
@@ -201,6 +202,30 @@ button, input { font: inherit; }
   color: rgba(255,255,255,.78);
   font-size: clamp(18px, 2vw, 23px);
   line-height: 1.45;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 34px;
+}
+
+.trust-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 40px;
+}
+
+.trust-line span {
+  padding: 10px 12px;
+  color: rgba(255,255,255,.78);
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 999px;
+  background: rgba(255,255,255,.06);
 }
 
 .console {
@@ -1096,7 +1121,7 @@ details p {
 
 @media (max-width: 1080px) {
   .site-header {
-    justify-content: flex-start;
+    grid-template-columns: auto 1fr;
   }
   .nav { display: none; }
   .hero-shell,
@@ -1119,7 +1144,7 @@ details p {
 @media (max-width: 720px) {
   .site-header {
     left: 12px;
-    right: auto;
+    right: 12px;
     top: 10px;
     min-height: 58px;
     padding: 10px 10px 10px 14px;
@@ -1127,6 +1152,7 @@ details p {
   }
   .brand { width: 132px; height: 42px; }
   .brand img { width: 116px; }
+  .header-cta { min-height: 38px; padding: 0 12px; font-size: 12px; justify-self: end; }
   .hero {
     padding: 148px 16px 42px;
   }
@@ -1140,6 +1166,9 @@ details p {
   .hero-copy p {
     font-size: 18px;
   }
+  .hero-actions { flex-direction: column; }
+  .btn { width: 100%; }
+  .trust-line { margin-top: 28px; }
   .console { padding: 14px; border-radius: 26px; }
   .return-console { padding: 15px; border-radius: 26px; }
   .return-console-head { display: block; }
