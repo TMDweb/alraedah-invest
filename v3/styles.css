@@ -613,9 +613,11 @@ button, input { font: inherit; }
 .section-head.offset { margin-left: min(16vw, 220px); }
 h2 {
   margin: 0;
-  font-size: clamp(34px, 4.4vw, 72px);
-  line-height: .98;
-  letter-spacing: 0;
+  max-width: 22ch;
+  font-size: clamp(30px, 3.4vw, 56px);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
 }
 .section-head p,
 .calc-copy p,
