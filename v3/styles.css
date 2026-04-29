@@ -92,15 +92,17 @@ button, input { font: inherit; }
   box-shadow: none;
 }
 .brand img {
-  width: 142px;
-  height: auto;
+  width: auto;
+  height: 30px;
+  display: block;
 }
 .site-header.is-scrolled .brand {
   width: 142px;
   height: 42px;
 }
 .site-header.is-scrolled .brand img {
-  width: 126px;
+  width: auto;
+  height: 26px;
 }
 
 .nav {
@@ -1182,7 +1184,7 @@ details p {
   .brand,
   .site-header.is-scrolled .brand { width: 116px; height: 38px; }
   .brand img,
-  .site-header.is-scrolled .brand img { width: 102px; }
+  .site-header.is-scrolled .brand img { width: auto; height: 24px; }
   .header-cta { min-height: 38px; padding: 0 12px; font-size: 12px; justify-self: end; }
   .hero {
     padding: 148px 16px 42px;
