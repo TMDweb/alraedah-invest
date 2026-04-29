@@ -1136,14 +1136,17 @@ details p {
   background: var(--blue-dark);
 }
 .site-footer img {
-  width: 150px;
+  width: auto;
+  height: 30px;
+  display: block;
 }
 .footer-mark {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 180px;
-  height: 58px;
+  width: 156px;
+  height: 60px;
+  padding: 14px 22px;
   border-radius: 16px;
   background: #fff;
 }
