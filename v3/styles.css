@@ -929,27 +929,11 @@ input[type="range"] {
   grid-template-columns: 200px 1fr;
   gap: 24px;
   align-items: center;
-  min-height: 124px;
+  min-height: 116px;
   padding: 22px 24px;
   border: 1px solid rgba(11,26,51,.08);
   border-radius: 26px;
   background: #fff;
-}
-.monthly-row {
-  grid-template-rows: 1fr auto;
-  row-gap: 8px;
-}
-.monthly-row .timing-label { grid-row: 1; }
-.monthly-row .timing-track { grid-row: 1; grid-column: 2; }
-.track-currency {
-  grid-row: 2;
-  grid-column: 2;
-  justify-self: end;
-  font-family: var(--mono);
-  font-size: 11px;
-  color: rgba(11,26,51,.5);
-  letter-spacing: .14em;
-  text-transform: uppercase;
 }
 .timing-label span {
   display: block;
@@ -968,46 +952,69 @@ input[type="range"] {
 }
 .timing-track {
   display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 22px;
+  align-items: center;
+}
+.month-rail {
+  display: grid;
+  grid-template-columns: repeat(11, minmax(0, 1fr));
+  gap: 8px;
+  align-items: center;
+}
+.month-rail i {
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(7,67,155,.12);
+}
+.dot-rail {
+  display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 6px;
   align-items: center;
+  justify-items: center;
 }
-.timing-track i,
-.timing-track b {
-  min-width: 0;
-  height: 34px;
-  border-radius: 999px;
+.dot-rail i {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, var(--cyan), var(--blue));
+  box-shadow: 0 5px 14px rgba(1,179,227,.32);
 }
-.timing-track i {
-  background: rgba(7,67,155,.08);
-}
-.bank-row .timing-track b {
+.payout-card {
   display: grid;
-  place-items: center;
-  grid-column: span 3;
-  height: 34px;
-  padding: 0 10px;
+  gap: 2px;
+  padding: 12px 20px;
+  border-radius: 18px;
+  text-align: right;
   white-space: nowrap;
+}
+.payout-card span {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  opacity: .7;
+}
+.payout-card strong {
+  display: block;
+  font-family: var(--mono);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.bank-payout {
   color: var(--blue-dark);
   background: var(--gold);
-  font-family: var(--mono);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: .02em;
-  box-shadow: 0 10px 22px rgba(241,195,27,.32);
+  box-shadow: 0 14px 28px rgba(241,195,27,.34);
 }
-.monthly-row .timing-track b {
-  display: grid;
-  place-items: center;
-  white-space: nowrap;
+.monthly-payout {
   color: #fff;
   background: linear-gradient(180deg, var(--cyan), var(--blue));
-  font-family: var(--mono);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0;
-  box-shadow: 0 8px 18px rgba(1,179,227,.2);
+  box-shadow: 0 14px 28px rgba(1,179,227,.3);
 }
+.monthly-payout span { opacity: .85; }
 .reinvest-row {
   color: #fff;
   background:
